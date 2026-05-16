@@ -3,7 +3,6 @@ import { Nav } from './components/landing/Nav';
 import { Hero } from './components/landing/Hero';
 import { Note } from './components/landing/Note';
 import { Tour } from './components/landing/Tour';
-import { Shortcuts } from './components/landing/Shortcuts';
 import { Filters } from './components/landing/Filters';
 import { Changelog } from './components/landing/Changelog';
 import { FAQ } from './components/landing/FAQ';
@@ -25,7 +24,6 @@ export default function Landing() {
       <Hero />
       <Note />
       <Tour />
-      <Shortcuts />
       <Filters />
       <Changelog />
       <FAQ />

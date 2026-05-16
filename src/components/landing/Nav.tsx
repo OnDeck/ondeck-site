@@ -53,9 +53,6 @@ export function Nav() {
         <a href="#tour" style={navLink}>
           Tour
         </a>
-        <a href="#shortcuts" style={navLink}>
-          Shortcuts
-        </a>
         <a href="#filters" style={navLink}>
           Filters
         </a>
