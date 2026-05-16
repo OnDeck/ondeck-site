@@ -1,5 +1,4 @@
-import { LP, TONE_MAP, type ToneColor } from './constants';
-import { sectionH2 } from './styles';
+import { TONE_MAP, type ToneColor } from './constants';
 
 interface ChangelogEntry {
   v: string;
@@ -21,125 +20,48 @@ const entries: ChangelogEntry[] = [
 
 export function Changelog() {
   return (
-    <section style={{ padding: '72px 28px', borderTop: `1px solid ${LP.line}` }}>
-      <div style={{ maxWidth: 1120, margin: '0 auto' }}>
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'baseline',
-            gap: 16,
-            marginBottom: 32,
-            flexWrap: 'wrap',
-          }}
-        >
-          <h2 style={{ ...sectionH2(), margin: 0 }}>
-            What changed <span style={{ color: LP.green }}>recently</span>.
+    <section className="py-18 px-7 border-t border-lp-line">
+      <div className="max-w-[1120px] mx-auto">
+        <div className="flex items-baseline gap-4 mb-8 flex-wrap">
+          <h2 className="text-4xl tracking-tight font-semibold text-lp-fg0 m-0 leading-tight">
+            What changed <span className="text-lp-green">recently</span>.
           </h2>
-          <a
-            href="#"
-            style={{
-              fontSize: 13,
-              color: LP.blue,
-              textDecoration: 'none',
-              letterSpacing: -0.1,
-            }}
-          >
+          <a href="#" className="text-[13px] text-lp-blue no-underline tracking-tight hover:underline">
             full changelog →
           </a>
         </div>
 
-        <div
-          style={{
-            background: LP.bg1,
-            border: `1px solid ${LP.line}`,
-            borderRadius: 10,
-            overflow: 'hidden',
-          }}
-        >
+        <div className="bg-lp-bg1 border border-lp-line rounded-[10px] overflow-hidden">
           {entries.map((e, i) => {
             const T = TONE_MAP[e.tone];
             return (
               <div
                 key={e.v}
+                className="grid grid-cols-[180px_1fr] gap-8 py-6 px-7"
                 style={{
-                  display: 'grid',
-                  gridTemplateColumns: '180px 1fr',
-                  gap: 32,
-                  padding: '24px 28px',
-                  borderBottom: i === entries.length - 1 ? 'none' : `1px solid ${LP.line}`,
+                  borderBottom: i === entries.length - 1 ? 'none' : '1px solid #e7e0d2',
                 }}
               >
                 <div>
-                  <div
-                    style={{
-                      fontSize: 16,
-                      fontFamily: 'var(--ondeck-mono)',
-                      color: LP.fg0,
-                      fontWeight: 600,
-                      letterSpacing: -0.1,
-                      marginBottom: 4,
-                    }}
-                  >
+                  <div className="text-base font-mono text-lp-fg0 font-semibold tracking-tight mb-1">
                     v{e.v}
                   </div>
-                  <div
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: 6,
-                      fontSize: 12,
-                      color: LP.fg2,
-                      fontFamily: 'var(--ondeck-mono)',
-                    }}
-                  >
+                  <div className="flex items-center gap-[6px] text-xs text-lp-fg2 font-mono">
                     <span
-                      style={{
-                        padding: '1px 7px',
-                        borderRadius: 3,
-                        background: T.bg,
-                        color: T.c,
-                        fontWeight: 600,
-                        fontSize: 10.5,
-                        letterSpacing: 0.4,
-                      }}
+                      className="py-[1px] px-[7px] rounded-[3px] font-semibold text-[10.5px] tracking-wide"
+                      style={{ background: T.bg, color: T.c }}
                     >
                       {e.tag}
                     </span>
                     <span>{e.d}</span>
                   </div>
                 </div>
-                <ul
-                  style={{
-                    margin: 0,
-                    padding: 0,
-                    listStyle: 'none',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: 9,
-                  }}
-                >
+                <ul className="m-0 p-0 list-none flex flex-col gap-[9px]">
                   {e.items.map((it, j) => (
-                    <li
-                      key={j}
-                      style={{
-                        fontSize: 14,
-                        color: LP.fg1,
-                        lineHeight: 1.55,
-                        paddingLeft: 18,
-                        position: 'relative',
-                        letterSpacing: -0.05,
-                      }}
-                    >
+                    <li key={j} className="text-sm text-lp-fg1 leading-[1.55] pl-[18px] relative tracking-tight">
                       <span
-                        style={{
-                          position: 'absolute',
-                          left: 0,
-                          top: 8,
-                          width: 8,
-                          height: 1.5,
-                          background: T.c,
-                          borderRadius: 1,
-                        }}
+                        className="absolute left-0 top-2 w-2 h-[1.5px] rounded-[1px]"
+                        style={{ background: T.c }}
                       />
                       {it}
                     </li>

@@ -1,77 +1,33 @@
-import { LP } from './constants';
-import { navLink } from './styles';
-
 export function Nav() {
   return (
-    <nav
-      style={{
-        height: 56,
-        display: 'flex',
-        alignItems: 'center',
-        padding: '0 28px',
-        borderBottom: `1px solid ${LP.line}`,
-        background: LP.bg0,
-        position: 'sticky',
-        top: 0,
-        zIndex: 50,
-      }}
-    >
-      <a
-        href="#"
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: 9,
-          textDecoration: 'none',
-          color: LP.fg0,
-        }}
-      >
-        <span
-          style={{
-            width: 22,
-            height: 22,
-            borderRadius: 6,
-            background: LP.ink,
-            display: 'inline-flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: '#fff',
-            transform: 'rotate(-4deg)',
-          }}
-        >
-          <svg width="11" height="11" viewBox="0 0 14 14" fill="currentColor">
-            <rect x="1" y="2" width="12" height="2.4" rx="0.6" />
-            <rect x="5.8" y="4.4" width="2.4" height="7.6" rx="0.6" />
-          </svg>
-        </span>
-        <span style={{ fontSize: 15, fontWeight: 600, letterSpacing: -0.3 }}>ondeck</span>
+    <nav className="h-14 flex items-center px-7 border-b border-lp-line bg-lp-bg0 sticky top-0 z-50">
+      <a href="#" className="flex items-center gap-2 no-underline text-lp-fg0">
+        <img
+          src="/icons/icon.svg"
+          alt="OnDeck"
+          className="w-[22px] h-[22px] -rotate-[4deg]"
+        />
+        <span className="text-[15px] font-semibold tracking-tight">ondeck</span>
       </a>
 
-      <div style={{ flex: 1 }} />
+      <div className="flex-1" />
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: 22, fontSize: 13 }}>
-        <a href="#tour" style={navLink}>
+      <div className="flex items-center gap-[22px] text-[13px]">
+        <a href="#tour" className="text-lp-fg1 no-underline tracking-tight hover:text-lp-fg0 transition-colors">
           Tour
         </a>
-        <a href="#filters" style={navLink}>
+        <a href="#shortcuts" className="text-lp-fg1 no-underline tracking-tight hover:text-lp-fg0 transition-colors">
+          Shortcuts
+        </a>
+        <a href="#filters" className="text-lp-fg1 no-underline tracking-tight hover:text-lp-fg0 transition-colors">
           Filters
         </a>
-        <a href="https://github.com/OnDeck/ondeck-extension" style={navLink}>
+        <a href="https://github.com/OnDeck/ondeck-extension" className="text-lp-fg1 no-underline tracking-tight hover:text-lp-fg0 transition-colors">
           Source
         </a>
         <a
           href="#install"
-          style={{
-            padding: '7px 12px',
-            background: LP.blue,
-            color: '#fff',
-            borderRadius: 5,
-            fontSize: 13,
-            fontWeight: 500,
-            textDecoration: 'none',
-            letterSpacing: -0.1,
-            whiteSpace: 'nowrap',
-          }}
+          className="py-[7px] px-3 bg-lp-blue text-white rounded-[5px] text-[13px] font-medium no-underline tracking-tight whitespace-nowrap hover:bg-opacity-90 transition-all"
         >
           Install
         </a>

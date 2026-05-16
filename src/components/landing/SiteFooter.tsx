@@ -1,44 +1,21 @@
-import { LP } from './constants';
-
 export function SiteFooter() {
   return (
-    <footer
-      style={{
-        padding: '26px 28px',
-        borderTop: `1px solid ${LP.line}`,
-        background: LP.bg0,
-      }}
-    >
-      <div
-        style={{
-          maxWidth: 1120,
-          margin: '0 auto',
-          display: 'flex',
-          alignItems: 'center',
-          gap: 16,
-          flexWrap: 'wrap',
-          fontSize: 12.5,
-          color: LP.fg2,
-          fontFamily: 'var(--ondeck-mono)',
-          letterSpacing: 0.1,
-        }}
-      >
-        <span style={{ color: LP.fg1 }}>ondeck 1.0.0</span>
-        <span style={{ color: LP.fg4 }}>·</span>
+    <footer className="py-[26px] px-7 border-t border-lp-line bg-lp-bg0">
+      <div className="max-w-[1120px] mx-auto flex items-center gap-4 flex-wrap text-[12.5px] text-lp-fg2 font-mono tracking-wide">
+        <span className="text-lp-fg1">ondeck 1.0.0</span>
+        <span className="text-lp-fg4">·</span>
         <span>MIT</span>
-        <span style={{ color: LP.fg4 }}>·</span>
-        <a href="#" style={{ color: LP.fg2, textDecoration: 'none' }}>
+        <span className="text-lp-fg4">·</span>
+        <a href="#" className="text-lp-fg2 no-underline hover:text-lp-fg1 transition-colors">
           source
         </a>
-        <a href="#" style={{ color: LP.fg2, textDecoration: 'none' }}>
+        <a href="#" className="text-lp-fg2 no-underline hover:text-lp-fg1 transition-colors">
           issues
         </a>
-        <a href="#" style={{ color: LP.fg2, textDecoration: 'none' }}>
+        <a href="#" className="text-lp-fg2 no-underline hover:text-lp-fg1 transition-colors">
           privacy
         </a>
-        <span style={{ marginLeft: 'auto', color: LP.fg3 }}>
-          built by one tired engineer · in Brooklyn
-        </span>
+        <span className="ml-auto text-lp-fg3">built by one tired engineer · in Brooklyn</span>
       </div>
     </footer>
   );
