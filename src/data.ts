@@ -1,7 +1,6 @@
-// Sample notification data for OnDeck — realistic GitHub-style entries
-// spread across priority + type axes.
+import type { Notification, Filter } from './types';
 
-export const ONDECK_NOTIFS = [
+export const ONDECK_NOTIFS: Notification[] = [
   {
     id: 'n1',
     priority: 'critical',
@@ -197,7 +196,7 @@ export const ONDECK_NOTIFS = [
   },
 ];
 
-export const ONDECK_FILTERS = [
+export const ONDECK_FILTERS: Filter[] = [
   { id: 'all', label: 'Inbox', count: 12 },
   { id: 'unread', label: 'Unread', count: 5 },
   { id: 'mentions', label: 'Mentions', count: 1, type: 'mention' },
