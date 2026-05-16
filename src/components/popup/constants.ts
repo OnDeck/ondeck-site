@@ -1,0 +1,67 @@
+import type { ThemeTokens, DensityPreset, TypeGlyph } from '../../types';
+
+export const ONDECK_TOKENS: Record<'dark' | 'light', ThemeTokens> = {
+  dark: {
+    bg0: '#0a0b0d',
+    bg1: '#101216',
+    bg2: '#161a20',
+    bg3: '#1d2128',
+    bg4: '#252a33',
+    line: '#1f242c',
+    lineStrong: '#2a313c',
+    fg0: '#e8eaee',
+    fg1: '#b3b9c4',
+    fg2: '#7a818c',
+    fg3: '#525864',
+    accent: '#3b82f6',
+    accentSoft: 'rgba(59,130,246,0.12)',
+    accentBorder: 'rgba(59,130,246,0.35)',
+    critical: '#ef6b6b',
+    criticalSoft: 'rgba(239,107,107,0.13)',
+    important: '#f59e0b',
+    importantSoft: 'rgba(245,158,11,0.13)',
+    success: '#34d399',
+    successSoft: 'rgba(52,211,153,0.13)',
+    muted: '#64748b',
+  },
+  light: {
+    bg0: '#f7f8fa',
+    bg1: '#ffffff',
+    bg2: '#f0f2f5',
+    bg3: '#e6e9ee',
+    bg4: '#dfe3ea',
+    line: '#e6e9ee',
+    lineStrong: '#d3d8e0',
+    fg0: '#0f1419',
+    fg1: '#3a4150',
+    fg2: '#6b7280',
+    fg3: '#9ca3af',
+    accent: '#2563eb',
+    accentSoft: 'rgba(37,99,235,0.10)',
+    accentBorder: 'rgba(37,99,235,0.35)',
+    critical: '#dc2626',
+    criticalSoft: 'rgba(220,38,38,0.08)',
+    important: '#d97706',
+    importantSoft: 'rgba(217,119,6,0.10)',
+    success: '#059669',
+    successSoft: 'rgba(5,150,105,0.10)',
+    muted: '#6b7280',
+  },
+};
+
+export const DENSITY_PRESETS: Record<'compact' | 'cozy' | 'spacious', DensityPreset> = {
+  compact: { rowPy: 8, rowGap: 0, avatar: 18, fs: 12, fsMeta: 11, lineClamp: 1, headerH: 40, chipH: 24 },
+  cozy: { rowPy: 11, rowGap: 1, avatar: 22, fs: 13, fsMeta: 11, lineClamp: 2, headerH: 44, chipH: 26 },
+  spacious: { rowPy: 15, rowGap: 2, avatar: 26, fs: 13, fsMeta: 12, lineClamp: 2, headerH: 48, chipH: 28 },
+};
+
+export const TYPE_GLYPH: Record<string, TypeGlyph> = {
+  pr: { code: 'PR', color: '#8b5cf6' },
+  review: { code: 'RV', color: '#3b82f6' },
+  mention: { code: '@', color: '#f59e0b' },
+  issue: { code: 'IS', color: '#22c55e' },
+  ci: { code: 'CI', color: '#06b6d4' },
+  security: { code: 'SEC', color: '#ef6b6b' },
+  release: { code: 'REL', color: '#64748b' },
+  discussion: { code: 'DIS', color: '#a855f7' },
+};
