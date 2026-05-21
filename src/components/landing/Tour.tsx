@@ -9,8 +9,11 @@ export function Tour() {
           What&rsquo;s <span className="text-lp-blue">in</span> the popup.
         </h2>
         <p className="text-base text-lp-fg1 leading-[1.55] m-0 max-w-[560px] tracking-tight">
-          Open it with the keyboard shortcut or the toolbar icon. Everything you can do, you can do
-          without the mouse.
+          Press{' '}
+          <kbd className="font-mono text-[11.5px] py-[1px] px-[6px] bg-lp-bg1 border border-lp-lineStrong rounded-[3px] text-lp-fg0 shadow-[0_1px_0_theme(colors.lp.line)]">
+            ⌘ ⇧ G
+          </kbd>{' '}
+          to open (or click the toolbar icon). Everything you can do, you can do without the mouse.
         </p>
 
         <div className="mt-12 grid grid-cols-[1fr_440px_1fr] gap-14 items-center">
@@ -24,8 +27,8 @@ export function Tour() {
             <Annotation
               tone="blue"
               num="02"
-              title="Filter chips"
-              body="One tap to scope to mentions, reviews, or your assigned issues. Counts update live."
+              title="Quick filters"
+              body="One tap to scope to PRs, Issues, mentions, reviews, or CI failures. Click the filter icon for advanced filtering by repository, date range, or priority."
             />
             <Annotation
               tone="purple"

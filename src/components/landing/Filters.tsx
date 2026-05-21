@@ -47,8 +47,8 @@ export function Filters() {
             Filters that read like <span className="text-lp-purple">grep</span>.
           </h2>
           <p className="text-base text-lp-fg1 leading-[1.55] m-0 max-w-[560px] tracking-tight">
-            Same syntax as GitHub&rsquo;s own search. OnDeck adds three keys for the things GitHub
-            doesn&rsquo;t have:{' '}
+            Advanced filtering lets you filter by repository, date range, priority level, notification
+            reason, and subject type. Or use text search with the same syntax as GitHub&rsquo;s own search — OnDeck adds{' '}
             <code className="font-mono text-[13px] py-[1px] px-[6px] bg-lp-bg1 border border-lp-line rounded text-lp-purple">
               priority:
             </code>
@@ -59,15 +59,19 @@ export function Filters() {
             , and{' '}
             <code className="font-mono text-[13px] py-[1px] px-[6px] bg-lp-bg1 border border-lp-line rounded text-lp-purple">
               thread:
-            </code>
-            .
+            </code>{' '}
+            for the things GitHub doesn&rsquo;t have.
           </p>
           <p className="text-base text-lp-fg1 leading-[1.55] m-0 max-w-[560px] tracking-tight mt-4">
-            Save any query as a preset. Pin presets to the chip rail. The command palette (
+            Save any query as a preset and pin it to the chip rail. Quick filters (
+            <kbd className="font-mono text-[11.5px] py-[1px] px-[6px] bg-lp-bg1 border border-lp-lineStrong rounded-[3px] text-lp-fg0 shadow-[0_1px_0_theme(colors.lp.line)]">
+              /
+            </kbd>
+            ) or command palette (
             <kbd className="font-mono text-[11.5px] py-[1px] px-[6px] bg-lp-bg1 border border-lp-lineStrong rounded-[3px] text-lp-fg0 shadow-[0_1px_0_theme(colors.lp.line)]">
               ⌘ k
             </kbd>
-            ) autocompletes from your repos and orgs.
+            ) autocomplete from your repos and orgs.
           </p>
         </div>
 

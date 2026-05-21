@@ -24,8 +24,11 @@ export function Hero() {
           </h1>
           <p className="text-[17px] leading-[1.55] text-lp-fg1 m-0 max-w-[460px] tracking-tight">
             A Chrome extension that ranks the reviews you actually owe people and the CI breakages
-            you&rsquo;re causing above the watcher noise &mdash; so you can clear your inbox
-            without leaving the keyboard.
+            you&rsquo;re causing above the watcher noise. Press{' '}
+            <kbd className="font-mono text-[11.5px] py-[2px] px-[7px] bg-lp-bg1 border border-lp-lineStrong rounded-[3px] text-lp-fg0 shadow-[0_1px_0_theme(colors.lp.line)]">
+              ⌘ ⇧ G
+            </kbd>{' '}
+            and never leave the keyboard.
           </p>
 
           <div className="flex gap-[10px] items-center mt-8 mb-[18px]">

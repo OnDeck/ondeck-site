@@ -11,11 +11,11 @@ const groups: ShortcutGroup[] = [
     tone: 'blue',
     head: 'navigate',
     rows: [
+      ['⌘ ⇧ G', 'open popup'],
       ['j', 'next notification'],
       ['k', 'previous notification'],
       ['o · enter', 'open in github'],
       ['g i', 'go to inbox'],
-      ['g m', 'go to mentions'],
     ],
   },
   {
