@@ -1,18 +1,35 @@
+import { motion } from 'framer-motion';
+
 export function Nav() {
   return (
-    <nav className="h-14 flex items-center px-7 border-b border-lp-line bg-lp-bg0 sticky top-0 z-50">
-      <a href="#" className="flex items-center gap-2 no-underline text-lp-fg0">
+    <motion.nav
+      className="h-14 flex items-center px-7 border-b border-lp-line bg-lp-bg0 sticky top-0 z-50"
+      initial={{ y: -56, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
+    >
+      <motion.a
+        href="#"
+        className="flex items-center gap-2 no-underline text-lp-fg0"
+        whileHover={{ scale: 1.05 }}
+        transition={{ duration: 0.2 }}
+      >
         <img
           src="/icons/icon.svg"
           alt="OnDeck"
           className="w-[22px] h-[22px] -rotate-[4deg]"
         />
         <span className="text-[15px] font-semibold tracking-tight">ondeck</span>
-      </a>
+      </motion.a>
 
       <div className="flex-1" />
 
-      <div className="flex items-center gap-[22px] text-[13px]">
+      <motion.div
+        className="flex items-center gap-[22px] text-[13px]"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
         <a href="#tour" className="text-lp-fg1 no-underline tracking-tight hover:text-lp-fg0 transition-colors">
           Tour
         </a>
@@ -31,7 +48,7 @@ export function Nav() {
         >
           Install
         </a>
-      </div>
-    </nav>
+      </motion.div>
+    </motion.nav>
   );
 }

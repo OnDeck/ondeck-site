@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 interface CodeLine {
   c?: string;
   t?: string;
@@ -42,7 +44,12 @@ export function Filters() {
   return (
     <section id="filters" className="py-18 px-7 border-t border-lp-line bg-lp-bg2">
       <div className="max-w-[1120px] mx-auto grid grid-cols-2 gap-14 items-start">
-        <div>
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="text-4xl tracking-tight font-semibold text-lp-fg0 m-0 mb-3 leading-tight">
             Filters that read like <span className="text-lp-purple">grep</span>.
           </h2>
@@ -73,9 +80,15 @@ export function Filters() {
             </kbd>
             ) autocomplete from your repos and orgs.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="bg-lp-bg1 border border-lp-line rounded-lg overflow-hidden font-mono text-[13.5px] leading-[1.75] shadow-[0_12px_32px_-16px_rgba(60,40,15,0.20)]">
+        <motion.div
+          className="bg-lp-bg1 border border-lp-line rounded-lg overflow-hidden font-mono text-[13.5px] leading-[1.75] shadow-[0_12px_32px_-16px_rgba(60,40,15,0.20)]"
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <div className="flex items-center gap-[6px] py-[9px] px-[13px] bg-lp-bg2 border-b border-lp-line text-[11.5px] text-lp-fg2 tracking-wide font-mono">
             <span className="w-[9px] h-[9px] rounded-[5px] bg-[#e5a8a3]" />
             <span className="w-[9px] h-[9px] rounded-[5px] bg-[#e5cba3]" />
@@ -102,7 +115,7 @@ export function Filters() {
               );
             })}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

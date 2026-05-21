@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { TONE_MAP, type ToneColor } from './constants';
 
 interface ShortcutGroup {
@@ -5,6 +6,15 @@ interface ShortcutGroup {
   head: string;
   rows: [string, string][];
 }
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5 },
+  },
+};
 
 const groups: ShortcutGroup[] = [
   {
@@ -54,11 +64,22 @@ export function Shortcuts() {
           Press <kbd className="font-mono text-[11.5px] py-[1px] px-[6px] bg-lp-bg1 border border-lp-lineStrong rounded-[3px] text-lp-fg0 shadow-[0_1px_0_theme(colors.lp.line)]">?</kbd> anywhere to see this list inside the popup.
         </p>
 
-        <div className="mt-10 grid grid-cols-3 gap-4">
-          {groups.map((g) => {
+        <motion.div
+          className="mt-10 grid grid-cols-3 gap-4"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ staggerChildren: 0.15 }}
+        >
+          {groups.map((g, idx) => {
             const T = TONE_MAP[g.tone];
             return (
-              <div key={g.head} className="bg-lp-bg1 border border-lp-line rounded-[10px] overflow-hidden">
+              <motion.div
+                key={g.head}
+                className="bg-lp-bg1 border border-lp-line rounded-[10px] overflow-hidden"
+                variants={cardVariants}
+                transition={{ delay: idx * 0.15 }}
+              >
                 <div
                   className="py-[10px] px-[18px] border-b border-lp-line text-[11px] font-mono font-semibold tracking-wider"
                   style={{ background: T.bg, color: T.c }}
@@ -84,10 +105,10 @@ export function Shortcuts() {
                     ))}
                   </tbody>
                 </table>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

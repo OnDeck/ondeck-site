@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 export function Install() {
   return (
     <section
@@ -10,7 +12,13 @@ export function Install() {
       <div className="absolute -bottom-[100px] -left-20 w-80 h-80 rounded-full bg-[radial-gradient(circle,rgba(42,95,217,0.18)_0%,transparent_70%)] pointer-events-none z-0" />
       <div className="absolute -top-[60px] -right-[60px] w-[280px] h-[280px] rounded-full bg-[radial-gradient(circle,rgba(117,73,184,0.18)_0%,transparent_70%)] pointer-events-none z-0" />
 
-      <div className="relative z-[1] max-w-[720px] mx-auto text-center">
+      <motion.div
+        className="relative z-[1] max-w-[720px] mx-auto text-center"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
         <h2 className="text-[44px] tracking-tight font-semibold text-lp-fg0 m-0 leading-[1.05] mb-4">
           Try it. Worst case, you uninstall.
         </h2>
@@ -33,7 +41,7 @@ export function Install() {
             Setup notes
           </a>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

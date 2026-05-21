@@ -1,7 +1,15 @@
+import { motion } from 'framer-motion';
+
 export function Note() {
   return (
     <section className="px-7 pb-16">
-      <div className="max-w-[760px] mx-auto py-6 px-[26px] bg-lp-bg2 border border-lp-line rounded-[10px] relative">
+      <motion.div
+        className="max-w-[760px] mx-auto py-6 px-[26px] bg-lp-bg2 border border-lp-line rounded-[10px] relative"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
         <div className="absolute -top-[10px] left-[22px] py-[2px] px-[10px] bg-lp-bg0 border border-lp-line rounded-xl text-[11px] font-mono text-lp-fg2 tracking-wide">
           README.md
         </div>
@@ -19,7 +27,7 @@ export function Note() {
           <span className="text-lp-fg1">Dillan Kerai.</span>
           <span className="text-lp-fg3">· mobile eng</span>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

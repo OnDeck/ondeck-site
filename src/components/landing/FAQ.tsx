@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 interface FAQItem {
   q: string;
   a: string;
@@ -31,12 +33,16 @@ export function FAQ() {
         </h2>
         <div>
           {qs.map((it, i) => (
-            <div
+            <motion.div
               key={i}
               className="py-[22px] border-t border-lp-line grid grid-cols-[32px_1fr] gap-[14px]"
               style={{
                 borderBottom: i === qs.length - 1 ? '1px solid #e7e0d2' : 'none',
               }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
             >
               <div className="font-mono text-sm text-lp-fg3 font-medium pt-[1px]">
                 Q{String(i + 1).padStart(2, '0')}
@@ -49,7 +55,7 @@ export function FAQ() {
                   {it.a}
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

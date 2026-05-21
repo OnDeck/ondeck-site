@@ -1,5 +1,25 @@
+import { motion } from 'framer-motion';
 import OnDeckPopup from '../../Popup';
 import { Annotation } from './Annotation';
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5 },
+  },
+};
 
 export function Tour() {
   return (
@@ -17,28 +37,46 @@ export function Tour() {
         </p>
 
         <div className="mt-12 grid grid-cols-[1fr_440px_1fr] gap-14 items-center">
-          <div className="flex flex-col gap-14 text-right">
-            <Annotation
-              tone="red"
-              num="01"
-              title="Priority groups"
-              body="Critical means CI is broken or a security alert dropped. Important means you're blocking someone or someone's blocking you. Everything else falls down."
-            />
-            <Annotation
-              tone="blue"
-              num="02"
-              title="Quick filters"
-              body="One tap to scope to PRs, Issues, mentions, reviews, or CI failures. Click the filter icon for advanced filtering by repository, date range, or priority."
-            />
-            <Annotation
-              tone="purple"
-              num="03"
-              title="Type codes"
-              body="PR · RV · @ · CI · SEC — same three letters every time, in the same colors. Skim once, you've read it."
-            />
-          </div>
+          <motion.div
+            className="flex flex-col gap-14 text-right"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <motion.div variants={itemVariants}>
+              <Annotation
+                tone="red"
+                num="01"
+                title="Priority groups"
+                body="Critical means CI is broken or a security alert dropped. Important means you're blocking someone or someone's blocking you. Everything else falls down."
+              />
+            </motion.div>
+            <motion.div variants={itemVariants}>
+              <Annotation
+                tone="blue"
+                num="02"
+                title="Quick filters"
+                body="One tap to scope to PRs, Issues, mentions, reviews, or CI failures. Click the filter icon for advanced filtering by repository, date range, or priority."
+              />
+            </motion.div>
+            <motion.div variants={itemVariants}>
+              <Annotation
+                tone="purple"
+                num="03"
+                title="Type codes"
+                body="PR · RV · @ · CI · SEC — same three letters every time, in the same colors. Skim once, you've read it."
+              />
+            </motion.div>
+          </motion.div>
 
-          <div className="w-[440px] h-[600px] rounded-[10px] overflow-hidden border border-lp-lineStrong shadow-[0_20px_50px_-16px_rgba(60,40,15,0.22)] justify-self-center">
+          <motion.div
+            className="w-[440px] h-[600px] rounded-[10px] overflow-hidden border border-lp-lineStrong shadow-[0_20px_50px_-16px_rgba(60,40,15,0.22)] justify-self-center"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             <OnDeckPopup
               density="cozy"
               filterMode="chips"
@@ -48,28 +86,40 @@ export function Tour() {
               width={440}
               height={600}
             />
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col gap-14">
-            <Annotation
-              tone="amber"
-              num="04"
-              title="Density toggle"
-              body="Three settings. Compact fits 16 rows per popup. Spacious is for when you actually want to read."
-            />
-            <Annotation
-              tone="green"
-              num="05"
-              title="Inline triage"
-              body="Archive, snooze, mute thread, mark read — all from the keyboard. The footer always shows what's available."
-            />
-            <Annotation
-              tone="blue"
-              num="06"
-              title="Group however"
-              body="By priority, repository, or time bucket. Group headers collapse. State sticks per session."
-            />
-          </div>
+          <motion.div
+            className="flex flex-col gap-14"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <motion.div variants={itemVariants}>
+              <Annotation
+                tone="amber"
+                num="04"
+                title="Density toggle"
+                body="Three settings. Compact fits 16 rows per popup. Spacious is for when you actually want to read."
+              />
+            </motion.div>
+            <motion.div variants={itemVariants}>
+              <Annotation
+                tone="green"
+                num="05"
+                title="Inline triage"
+                body="Archive, snooze, mute thread, mark read — all from the keyboard. The footer always shows what's available."
+              />
+            </motion.div>
+            <motion.div variants={itemVariants}>
+              <Annotation
+                tone="blue"
+                num="06"
+                title="Group however"
+                body="By priority, repository, or time bucket. Group headers collapse. State sticks per session."
+              />
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>
