@@ -1,37 +1,20 @@
 import OnDeckPopup from '../../Popup';
-import { LP } from './constants';
-import { sectionH2, sectionLead } from './styles';
 import { Annotation } from './Annotation';
 
 export function Tour() {
   return (
-    <section
-      id="tour"
-      style={{
-        padding: '72px 28px',
-        borderTop: `1px solid ${LP.line}`,
-        background: LP.bg1,
-      }}
-    >
-      <div style={{ maxWidth: 1120, margin: '0 auto' }}>
-        <h2 style={sectionH2()}>
-          What&rsquo;s <span style={{ color: LP.blue }}>in</span> the popup.
+    <section id="tour" className="py-18 px-7 border-t border-lp-line bg-lp-bg1">
+      <div className="max-w-[1120px] mx-auto">
+        <h2 className="text-4xl tracking-tight font-semibold text-lp-fg0 m-0 mb-3 leading-tight">
+          What&rsquo;s <span className="text-lp-blue">in</span> the popup.
         </h2>
-        <p style={sectionLead()}>
+        <p className="text-base text-lp-fg1 leading-[1.55] m-0 max-w-[560px] tracking-tight">
           Open it with the keyboard shortcut or the toolbar icon. Everything you can do, you can do
           without the mouse.
         </p>
 
-        <div
-          style={{
-            marginTop: 48,
-            display: 'grid',
-            gridTemplateColumns: '1fr 440px 1fr',
-            gap: 56,
-            alignItems: 'center',
-          }}
-        >
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 56, textAlign: 'right' }}>
+        <div className="mt-12 grid grid-cols-[1fr_440px_1fr] gap-14 items-center">
+          <div className="flex flex-col gap-14 text-right">
             <Annotation
               tone="red"
               num="01"
@@ -52,17 +35,7 @@ export function Tour() {
             />
           </div>
 
-          <div
-            style={{
-              width: 440,
-              height: 600,
-              borderRadius: 10,
-              overflow: 'hidden',
-              border: `1px solid ${LP.lineStrong}`,
-              boxShadow: '0 20px 50px -16px rgba(60,40,15,0.22)',
-              justifySelf: 'center',
-            }}
-          >
+          <div className="w-[440px] h-[600px] rounded-[10px] overflow-hidden border border-lp-lineStrong shadow-[0_20px_50px_-16px_rgba(60,40,15,0.22)] justify-self-center">
             <OnDeckPopup
               density="cozy"
               filterMode="chips"
@@ -74,7 +47,7 @@ export function Tour() {
             />
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 56 }}>
+          <div className="flex flex-col gap-14">
             <Annotation
               tone="amber"
               num="04"

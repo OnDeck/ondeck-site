@@ -13,43 +13,15 @@ export function Annotation({ num, title, body, tone = 'blue' }: AnnotationProps)
   return (
     <div>
       <div
-        style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          padding: '2px 9px',
-          fontSize: 10.5,
-          fontFamily: 'var(--ondeck-mono)',
-          color: T.c,
-          fontWeight: 600,
-          letterSpacing: 0.4,
-          background: T.bg,
-          borderRadius: 4,
-          marginBottom: 10,
-        }}
+        className="inline-flex items-center py-[2px] px-[9px] text-[10.5px] font-mono font-semibold tracking-wide rounded mb-[10px]"
+        style={{ color: T.c, background: T.bg }}
       >
         {num}
       </div>
-      <h3
-        style={{
-          fontSize: 17,
-          fontWeight: 600,
-          letterSpacing: -0.3,
-          color: '#1a1814',
-          margin: 0,
-          marginBottom: 8,
-        }}
-      >
+      <h3 className="text-[17px] font-semibold tracking-tight text-lp-fg0 m-0 mb-2">
         {title}
       </h3>
-      <p
-        style={{
-          fontSize: 13.5,
-          color: '#7a7568',
-          margin: 0,
-          lineHeight: 1.6,
-          letterSpacing: -0.05,
-        }}
-      >
+      <p className="text-[13.5px] text-lp-fg2 m-0 leading-[1.6] tracking-tight">
         {body}
       </p>
     </div>

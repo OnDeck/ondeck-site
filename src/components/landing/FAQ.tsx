@@ -1,6 +1,3 @@
-import { LP } from './constants';
-import { sectionH2 } from './styles';
-
 interface FAQItem {
   q: string;
   a: string;
@@ -27,61 +24,28 @@ const qs: FAQItem[] = [
 
 export function FAQ() {
   return (
-    <section
-      style={{
-        padding: '72px 28px',
-        borderTop: `1px solid ${LP.line}`,
-        background: LP.bg1,
-      }}
-    >
-      <div style={{ maxWidth: 800, margin: '0 auto' }}>
-        <h2 style={{ ...sectionH2(), marginBottom: 28 }}>
-          <span style={{ color: LP.red }}>Honest</span> questions.
+    <section className="py-18 px-7 border-t border-lp-line bg-lp-bg1">
+      <div className="max-w-[800px] mx-auto">
+        <h2 className="text-4xl tracking-tight font-semibold text-lp-fg0 m-0 mb-7 leading-tight">
+          <span className="text-lp-red">Honest</span> questions.
         </h2>
         <div>
           {qs.map((it, i) => (
             <div
               key={i}
+              className="py-[22px] border-t border-lp-line grid grid-cols-[32px_1fr] gap-[14px]"
               style={{
-                padding: '22px 0',
-                borderTop: `1px solid ${LP.line}`,
-                borderBottom: i === qs.length - 1 ? `1px solid ${LP.line}` : 'none',
-                display: 'grid',
-                gridTemplateColumns: '32px 1fr',
-                gap: 14,
+                borderBottom: i === qs.length - 1 ? '1px solid #e7e0d2' : 'none',
               }}
             >
-              <div
-                style={{
-                  fontFamily: 'var(--ondeck-mono)',
-                  fontSize: 14,
-                  color: LP.fg3,
-                  fontWeight: 500,
-                  paddingTop: 1,
-                }}
-              >
+              <div className="font-mono text-sm text-lp-fg3 font-medium pt-[1px]">
                 Q{String(i + 1).padStart(2, '0')}
               </div>
               <div>
-                <div
-                  style={{
-                    fontSize: 15.5,
-                    fontWeight: 600,
-                    color: LP.fg0,
-                    marginBottom: 8,
-                    letterSpacing: -0.2,
-                  }}
-                >
+                <div className="text-[15.5px] font-semibold text-lp-fg0 mb-2 tracking-tight">
                   {it.q}
                 </div>
-                <div
-                  style={{
-                    fontSize: 14.5,
-                    color: LP.fg1,
-                    lineHeight: 1.6,
-                    letterSpacing: -0.05,
-                  }}
-                >
+                <div className="text-[14.5px] text-lp-fg1 leading-[1.6] tracking-tight">
                   {it.a}
                 </div>
               </div>

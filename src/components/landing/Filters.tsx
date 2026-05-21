@@ -1,6 +1,3 @@
-import { LP } from './constants';
-import { sectionH2, sectionLead, inlineCode } from './styles';
-
 interface CodeLine {
   c?: string;
   t?: string;
@@ -8,125 +5,84 @@ interface CodeLine {
 }
 
 const lines: CodeLine[] = [
-  { c: LP.fg3, t: '# Unread reviews on repos you own' },
+  { c: '#a39d8e', t: '# Unread reviews on repos you own' },
   {
     spans: [
-      { t: 'is:', c: LP.purple },
-      { t: 'unread ', c: LP.fg0 },
-      { t: 'type:', c: LP.purple },
-      { t: 'review ', c: LP.fg0 },
-      { t: 'repo:', c: LP.purple },
-      { t: 'acme/*', c: LP.fg0 },
+      { t: 'is:', c: '#7549b8' },
+      { t: 'unread ', c: '#1a1814' },
+      { t: 'type:', c: '#7549b8' },
+      { t: 'review ', c: '#1a1814' },
+      { t: 'repo:', c: '#7549b8' },
+      { t: 'acme/*', c: '#1a1814' },
     ],
   },
   { t: '' },
-  { c: LP.fg3, t: '# Things blocking you, last 24h' },
+  { c: '#a39d8e', t: '# Things blocking you, last 24h' },
   {
     spans: [
-      { t: 'priority:', c: LP.purple },
-      { t: 'critical,important ', c: LP.fg0 },
-      { t: 'age:', c: LP.purple },
-      { t: '<24h', c: LP.fg0 },
+      { t: 'priority:', c: '#7549b8' },
+      { t: 'critical,important ', c: '#1a1814' },
+      { t: 'age:', c: '#7549b8' },
+      { t: '<24h', c: '#1a1814' },
     ],
   },
   { t: '' },
-  { c: LP.fg3, t: '# Specific person mentioning you' },
+  { c: '#a39d8e', t: '# Specific person mentioning you' },
   {
     spans: [
-      { t: 'is:', c: LP.purple },
-      { t: 'mention ', c: LP.fg0 },
-      { t: 'author:', c: LP.purple },
-      { t: 'maya.chen', c: LP.fg0 },
+      { t: 'is:', c: '#7549b8' },
+      { t: 'mention ', c: '#1a1814' },
+      { t: 'author:', c: '#7549b8' },
+      { t: 'maya.chen', c: '#1a1814' },
     ],
   },
 ];
 
 export function Filters() {
   return (
-    <section
-      id="filters"
-      style={{
-        padding: '72px 28px',
-        borderTop: `1px solid ${LP.line}`,
-        background: LP.bg2,
-      }}
-    >
-      <div
-        style={{
-          maxWidth: 1120,
-          margin: '0 auto',
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: 56,
-          alignItems: 'start',
-        }}
-      >
+    <section id="filters" className="py-18 px-7 border-t border-lp-line bg-lp-bg2">
+      <div className="max-w-[1120px] mx-auto grid grid-cols-2 gap-14 items-start">
         <div>
-          <h2 style={sectionH2()}>
-            Filters that read like <span style={{ color: LP.purple }}>grep</span>.
+          <h2 className="text-4xl tracking-tight font-semibold text-lp-fg0 m-0 mb-3 leading-tight">
+            Filters that read like <span className="text-lp-purple">grep</span>.
           </h2>
-          <p style={sectionLead()}>
+          <p className="text-base text-lp-fg1 leading-[1.55] m-0 max-w-[560px] tracking-tight">
             Same syntax as GitHub&rsquo;s own search. OnDeck adds three keys for the things GitHub
-            doesn&rsquo;t have: <code style={inlineCode(LP.purple)}>priority:</code>,{' '}
-            <code style={inlineCode(LP.purple)}>age:</code>, and{' '}
-            <code style={inlineCode(LP.purple)}>thread:</code>.
+            doesn&rsquo;t have:{' '}
+            <code className="font-mono text-[13px] py-[1px] px-[6px] bg-lp-bg1 border border-lp-line rounded text-lp-purple">
+              priority:
+            </code>
+            ,{' '}
+            <code className="font-mono text-[13px] py-[1px] px-[6px] bg-lp-bg1 border border-lp-line rounded text-lp-purple">
+              age:
+            </code>
+            , and{' '}
+            <code className="font-mono text-[13px] py-[1px] px-[6px] bg-lp-bg1 border border-lp-line rounded text-lp-purple">
+              thread:
+            </code>
+            .
           </p>
-          <p style={{ ...sectionLead(), marginTop: 16 }}>
+          <p className="text-base text-lp-fg1 leading-[1.55] m-0 max-w-[560px] tracking-tight mt-4">
             Save any query as a preset. Pin presets to the chip rail. The command palette (
-            <kbd
-              style={{
-                fontFamily: 'var(--ondeck-mono)',
-                fontSize: 11.5,
-                padding: '1px 6px',
-                background: LP.bg1,
-                border: `1px solid ${LP.lineStrong}`,
-                borderRadius: 3,
-                color: LP.fg0,
-                boxShadow: `0 1px 0 ${LP.line}`,
-              }}
-            >
+            <kbd className="font-mono text-[11.5px] py-[1px] px-[6px] bg-lp-bg1 border border-lp-lineStrong rounded-[3px] text-lp-fg0 shadow-[0_1px_0_theme(colors.lp.line)]">
               ⌘ k
             </kbd>
             ) autocompletes from your repos and orgs.
           </p>
         </div>
 
-        <div
-          style={{
-            background: LP.bg1,
-            border: `1px solid ${LP.line}`,
-            borderRadius: 8,
-            overflow: 'hidden',
-            fontFamily: 'var(--ondeck-mono)',
-            fontSize: 13.5,
-            lineHeight: 1.75,
-            boxShadow: '0 12px 32px -16px rgba(60,40,15,0.20)',
-          }}
-        >
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 6,
-              padding: '9px 13px',
-              background: LP.bg2,
-              borderBottom: `1px solid ${LP.line}`,
-              fontSize: 11.5,
-              color: LP.fg2,
-              letterSpacing: 0.2,
-              fontFamily: 'var(--ondeck-mono)',
-            }}
-          >
-            <span style={{ width: 9, height: 9, borderRadius: 5, background: '#e5a8a3' }} />
-            <span style={{ width: 9, height: 9, borderRadius: 5, background: '#e5cba3' }} />
-            <span style={{ width: 9, height: 9, borderRadius: 5, background: '#a3cfae' }} />
-            <span style={{ marginLeft: 10 }}>~/ondeck/presets.conf</span>
+        <div className="bg-lp-bg1 border border-lp-line rounded-lg overflow-hidden font-mono text-[13.5px] leading-[1.75] shadow-[0_12px_32px_-16px_rgba(60,40,15,0.20)]">
+          <div className="flex items-center gap-[6px] py-[9px] px-[13px] bg-lp-bg2 border-b border-lp-line text-[11.5px] text-lp-fg2 tracking-wide font-mono">
+            <span className="w-[9px] h-[9px] rounded-[5px] bg-[#e5a8a3]" />
+            <span className="w-[9px] h-[9px] rounded-[5px] bg-[#e5cba3]" />
+            <span className="w-[9px] h-[9px] rounded-[5px] bg-[#a3cfae]" />
+            <span className="ml-[10px]">~/ondeck/presets.conf</span>
           </div>
-          <div style={{ padding: '16px 18px' }}>
+          <div className="py-4 px-[18px]">
             {lines.map((l, i) => {
               if (l.spans) {
                 return (
-                  <div key={i} style={{ minHeight: 24, whiteSpace: 'pre' }}>
+                  <div key={i} className="min-h-6 whitespace-pre">
                     {l.spans.map((s, j) => (
                       <span key={j} style={{ color: s.c }}>
                         {s.t}
@@ -136,14 +92,7 @@ export function Filters() {
                 );
               }
               return (
-                <div
-                  key={i}
-                  style={{
-                    color: l.c || LP.fg2,
-                    minHeight: 24,
-                    whiteSpace: 'pre',
-                  }}
-                >
+                <div key={i} className="min-h-6 whitespace-pre" style={{ color: l.c || '#7a7568' }}>
                   {l.t || ' '}
                 </div>
               );
