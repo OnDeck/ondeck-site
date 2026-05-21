@@ -23,14 +23,14 @@ const itemVariants = {
 
 export function Tour() {
   return (
-    <section id="tour" className="py-18 px-7 border-t border-lp-line bg-lp-bg1">
+    <section id="tour" className="py-18 px-7 border-t border-stone-300 bg-white">
       <div className="max-w-[1120px] mx-auto">
-        <h2 className="text-4xl tracking-tight font-semibold text-lp-fg0 m-0 mb-3 leading-tight">
-          What&rsquo;s <span className="text-lp-blue">in</span> the popup.
+        <h2 className="text-4xl tracking-tight font-semibold text-slate-900 m-0 mb-3 leading-tight">
+          What&rsquo;s <span className="text-blue-600">in</span> the popup.
         </h2>
-        <p className="text-base text-lp-fg1 leading-[1.55] m-0 max-w-[560px] tracking-tight">
+        <p className="text-base text-slate-700 leading-[1.55] m-0 max-w-[560px] tracking-tight">
           Press{' '}
-          <kbd className="font-mono text-[11.5px] py-[1px] px-[6px] bg-lp-bg1 border border-lp-lineStrong rounded-[3px] text-lp-fg0 shadow-[0_1px_0_theme(colors.lp.line)]">
+          <kbd className="font-mono text-[11.5px] py-[1px] px-[6px] bg-white border border-stone-400 rounded-[3px] text-slate-900 shadow-[0_1px_0_#d6d3d1]">
             ⌘ ⇧ G
           </kbd>{' '}
           to open (or click the toolbar icon). Everything you can do, you can do without the mouse.
@@ -71,7 +71,7 @@ export function Tour() {
           </motion.div>
 
           <motion.div
-            className="w-[440px] h-[600px] rounded-[10px] overflow-hidden border border-lp-lineStrong shadow-[0_20px_50px_-16px_rgba(60,40,15,0.22)] justify-self-center"
+            className="w-[440px] h-[600px] rounded-[10px] overflow-hidden border border-stone-400 shadow-[0_20px_50px_-16px_rgba(60,40,15,0.22)] justify-self-center"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}

@@ -26,16 +26,16 @@ const qs: FAQItem[] = [
 
 export function FAQ() {
   return (
-    <section className="py-18 px-7 border-t border-lp-line bg-lp-bg1">
+    <section className="py-18 px-7 border-t border-stone-300 bg-white">
       <div className="max-w-[800px] mx-auto">
-        <h2 className="text-4xl tracking-tight font-semibold text-lp-fg0 m-0 mb-7 leading-tight">
-          <span className="text-lp-red">Honest</span> questions.
+        <h2 className="text-4xl tracking-tight font-semibold text-slate-900 m-0 mb-7 leading-tight">
+          <span className="text-red-600">Honest</span> questions.
         </h2>
         <div>
           {qs.map((it, i) => (
             <motion.div
               key={i}
-              className="py-[22px] border-t border-lp-line grid grid-cols-[32px_1fr] gap-[14px]"
+              className="py-[22px] border-t border-stone-300 grid grid-cols-[32px_1fr] gap-[14px]"
               style={{
                 borderBottom: i === qs.length - 1 ? '1px solid #e7e0d2' : 'none',
               }}
@@ -44,14 +44,14 @@ export function FAQ() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >
-              <div className="font-mono text-sm text-lp-fg3 font-medium pt-[1px]">
+              <div className="font-mono text-sm text-slate-400 font-medium pt-[1px]">
                 Q{String(i + 1).padStart(2, '0')}
               </div>
               <div>
-                <div className="text-[15.5px] font-semibold text-lp-fg0 mb-2 tracking-tight">
+                <div className="text-[15.5px] font-semibold text-slate-900 mb-2 tracking-tight">
                   {it.q}
                 </div>
-                <div className="text-[14.5px] text-lp-fg1 leading-[1.6] tracking-tight">
+                <div className="text-[14.5px] text-slate-700 leading-[1.6] tracking-tight">
                   {it.a}
                 </div>
               </div>

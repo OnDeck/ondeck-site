@@ -19,32 +19,32 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <motion.div
-            className="inline-flex items-center gap-2 py-[5px] pr-3 pl-2 bg-lp-bg1 border border-lp-line rounded-full text-[12.5px] text-lp-fg1 mb-6"
+            className="inline-flex items-center gap-2 py-[5px] pr-3 pl-2 bg-white border border-stone-300 rounded-full text-[12.5px] text-slate-700 mb-6"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4, delay: 0.3 }}
           >
             <motion.span
-              className="w-[7px] h-[7px] rounded bg-lp-green shadow-[0_0_0_3px_theme(colors.lp.greenSoft)]"
+              className="w-[7px] h-[7px] rounded bg-green-600 shadow-[0_0_0_3px_#dcfce7]"
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
             />
             <span className="font-mono text-[11.5px]">v1.0.0</span>
           </motion.div>
 
-          <h1 className="text-[62px] leading-none tracking-[-2.4px] font-semibold text-lp-fg0 m-0 mb-6">
+          <h1 className="text-[62px] leading-none tracking-[-2.4px] font-semibold text-slate-900 m-0 mb-6">
             Your GitHub
             <br />
             inbox, but{' '}
-            <span className="bg-[linear-gradient(180deg,transparent_65%,theme(colors.lp.amberSoft)_65%)] px-1 -ml-1">
+            <span className="bg-[linear-gradient(180deg,transparent_65%,#fffbeb_65%)] px-1 -ml-1">
               quiet
             </span>
             .
           </h1>
-          <p className="text-[17px] leading-[1.55] text-lp-fg1 m-0 max-w-[460px] tracking-tight">
+          <p className="text-[17px] leading-[1.55] text-slate-700 m-0 max-w-[460px] tracking-tight">
             A Chrome extension that ranks the reviews you actually owe people and the CI breakages
             you&rsquo;re causing above the watcher noise. Press{' '}
-            <kbd className="font-mono text-[11.5px] py-[2px] px-[7px] bg-lp-bg1 border border-lp-lineStrong rounded-[3px] text-lp-fg0 shadow-[0_1px_0_theme(colors.lp.line)]">
+            <kbd className="font-mono text-[11.5px] py-[2px] px-[7px] bg-white border border-stone-400 rounded-[3px] text-slate-900 shadow-[0_1px_0_#d6d3d1]">
               ⌘ ⇧ G
             </kbd>{' '}
             and never leave the keyboard.
@@ -53,20 +53,20 @@ export function Hero() {
           <div className="flex gap-[10px] items-center mt-8 mb-[18px]">
             <a
               href="#install"
-              className="py-[11px] px-[18px] bg-lp-ink text-white rounded-[7px] text-sm font-medium no-underline tracking-tight whitespace-nowrap inline-flex items-center gap-2 shadow-[0_1px_0_rgba(0,0,0,0.04),0_4px_12px_-4px_rgba(0,0,0,0.2)] hover:bg-opacity-90 transition-all"
+              className="py-[11px] px-[18px] bg-slate-900 text-white rounded-[7px] text-sm font-medium no-underline tracking-tight whitespace-nowrap inline-flex items-center gap-2 shadow-[0_1px_0_rgba(0,0,0,0.04),0_4px_12px_-4px_rgba(0,0,0,0.2)] hover:bg-opacity-90 transition-all"
             >
               Install for Chrome
               <span className="font-mono text-[11px] opacity-60">↗</span>
             </a>
             <a
               href="https://github.com/OnDeck/ondeck-extension"
-              className="py-[11px] px-4 bg-transparent text-lp-fg0 border border-lp-lineStrong rounded-[7px] text-sm font-medium no-underline tracking-tight whitespace-nowrap hover:border-lp-fg2 transition-colors"
+              className="py-[11px] px-4 bg-transparent text-slate-900 border border-stone-400 rounded-[7px] text-sm font-medium no-underline tracking-tight whitespace-nowrap hover:border-slate-600 transition-colors"
             >
               View source
             </a>
           </div>
 
-          <p className="text-[12.5px] text-lp-fg2 m-0 tracking-tight font-mono">
+          <p className="text-[12.5px] text-slate-600 m-0 tracking-tight font-mono">
             free · local-only · personal &amp; GHES
           </p>
         </motion.div>
@@ -77,10 +77,10 @@ export function Hero() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <div className="absolute -inset-4 bg-lp-amberSoft rounded-2xl rotate-[2deg] z-0" />
-          <div className="absolute -inset-2 bg-lp-bg1 rounded-xl -rotate-1 border border-lp-line z-[1]" />
+          <div className="absolute -inset-4 bg-amber-50 rounded-2xl rotate-[2deg] z-0" />
+          <div className="absolute -inset-2 bg-white rounded-xl -rotate-1 border border-stone-300 z-[1]" />
 
-          <div className="relative z-[2] w-[440px] h-[600px] rounded-[10px] overflow-hidden border border-lp-lineStrong shadow-[0_24px_60px_-20px_rgba(60,40,15,0.25),0_8px_20px_-8px_rgba(60,40,15,0.15)]">
+          <div className="relative z-[2] w-[440px] h-[600px] rounded-[10px] overflow-hidden border border-stone-400 shadow-[0_24px_60px_-20px_rgba(60,40,15,0.25),0_8px_20px_-8px_rgba(60,40,15,0.15)]">
             <OnDeckPopup
               density="cozy"
               filterMode="chips"

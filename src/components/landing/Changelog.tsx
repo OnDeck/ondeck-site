@@ -20,18 +20,18 @@ const entries: ChangelogEntry[] = [
 
 export function Changelog() {
   return (
-    <section className="py-18 px-7 border-t border-lp-line">
+    <section className="py-18 px-7 border-t border-stone-300">
       <div className="max-w-[1120px] mx-auto">
         <div className="flex items-baseline gap-4 mb-8 flex-wrap">
-          <h2 className="text-4xl tracking-tight font-semibold text-lp-fg0 m-0 leading-tight">
-            What changed <span className="text-lp-green">recently</span>.
+          <h2 className="text-4xl tracking-tight font-semibold text-slate-900 m-0 leading-tight">
+            What changed <span className="text-green-600">recently</span>.
           </h2>
-          <a href="#" className="text-[13px] text-lp-blue no-underline tracking-tight hover:underline">
+          <a href="#" className="text-[13px] text-blue-600 no-underline tracking-tight hover:underline">
             full changelog →
           </a>
         </div>
 
-        <div className="bg-lp-bg1 border border-lp-line rounded-[10px] overflow-hidden">
+        <div className="bg-white border border-stone-300 rounded-[10px] overflow-hidden">
           {entries.map((e, i) => {
             const T = TONE_MAP[e.tone];
             return (
@@ -43,10 +43,10 @@ export function Changelog() {
                 }}
               >
                 <div>
-                  <div className="text-base font-mono text-lp-fg0 font-semibold tracking-tight mb-1">
+                  <div className="text-base font-mono text-slate-900 font-semibold tracking-tight mb-1">
                     v{e.v}
                   </div>
-                  <div className="flex items-center gap-[6px] text-xs text-lp-fg2 font-mono">
+                  <div className="flex items-center gap-[6px] text-xs text-slate-600 font-mono">
                     <span
                       className="py-[1px] px-[7px] rounded-[3px] font-semibold text-[10.5px] tracking-wide"
                       style={{ background: T.bg, color: T.c }}
@@ -58,7 +58,7 @@ export function Changelog() {
                 </div>
                 <ul className="m-0 p-0 list-none flex flex-col gap-[9px]">
                   {e.items.map((it, j) => (
-                    <li key={j} className="text-sm text-lp-fg1 leading-[1.55] pl-[18px] relative tracking-tight">
+                    <li key={j} className="text-sm text-slate-700 leading-[1.55] pl-[18px] relative tracking-tight">
                       <span
                         className="absolute left-0 top-2 w-2 h-[1.5px] rounded-[1px]"
                         style={{ background: T.c }}

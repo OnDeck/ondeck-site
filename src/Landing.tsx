@@ -11,7 +11,7 @@ import { SiteFooter } from './components/landing/SiteFooter';
 
 export default function Landing() {
   return (
-    <div className="bg-lp-bg0 text-lp-fg0 min-h-screen font-sans tracking-tight">
+    <div className="bg-stone-50 text-slate-900 min-h-screen font-sans tracking-tight">
       <Nav />
       <Hero />
       <Note />

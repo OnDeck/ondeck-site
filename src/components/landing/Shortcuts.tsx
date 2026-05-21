@@ -54,14 +54,14 @@ const groups: ShortcutGroup[] = [
 
 export function Shortcuts() {
   return (
-    <section id="shortcuts" className="py-18 px-7 border-t border-lp-line">
+    <section id="shortcuts" className="py-18 px-7 border-t border-stone-300">
       <div className="max-w-[1120px] mx-auto">
-        <h2 className="text-4xl tracking-tight font-semibold text-lp-fg0 m-0 mb-3 leading-tight">
-          Every <span className="text-lp-amber">key</span>, mapped.
+        <h2 className="text-4xl tracking-tight font-semibold text-slate-900 m-0 mb-3 leading-tight">
+          Every <span className="text-amber-600">key</span>, mapped.
         </h2>
-        <p className="text-base text-lp-fg1 leading-[1.55] m-0 max-w-[560px] tracking-tight">
+        <p className="text-base text-slate-700 leading-[1.55] m-0 max-w-[560px] tracking-tight">
           OnDeck is for people who&rsquo;d rather memorize fifteen keys than move a mouse.
-          Press <kbd className="font-mono text-[11.5px] py-[1px] px-[6px] bg-lp-bg1 border border-lp-lineStrong rounded-[3px] text-lp-fg0 shadow-[0_1px_0_theme(colors.lp.line)]">?</kbd> anywhere to see this list inside the popup.
+          Press <kbd className="font-mono text-[11.5px] py-[1px] px-[6px] bg-white border border-stone-400 rounded-[3px] text-slate-900 shadow-[0_1px_0_#d6d3d1]">?</kbd> anywhere to see this list inside the popup.
         </p>
 
         <motion.div
@@ -76,12 +76,12 @@ export function Shortcuts() {
             return (
               <motion.div
                 key={g.head}
-                className="bg-lp-bg1 border border-lp-line rounded-[10px] overflow-hidden"
+                className="bg-white border border-stone-300 rounded-[10px] overflow-hidden"
                 variants={cardVariants}
                 transition={{ delay: idx * 0.15 }}
               >
                 <div
-                  className="py-[10px] px-[18px] border-b border-lp-line text-[11px] font-mono font-semibold tracking-wider"
+                  className="py-[10px] px-[18px] border-b border-stone-300 text-[11px] font-mono font-semibold tracking-wider"
                   style={{ background: T.bg, color: T.c }}
                 >
                   {g.head}
@@ -95,10 +95,10 @@ export function Shortcuts() {
                           borderBottom: i === g.rows.length - 1 ? 'none' : '1px solid #e7e0d2',
                         }}
                       >
-                        <td className="py-[10px] pr-[14px] pl-[18px] text-[12.5px] text-lp-fg0 whitespace-nowrap align-top font-medium w-[40%]">
+                        <td className="py-[10px] pr-[14px] pl-[18px] text-[12.5px] text-slate-900 whitespace-nowrap align-top font-medium w-[40%]">
                           {k}
                         </td>
-                        <td className="py-[10px] pr-[18px] pl-0 text-[13px] text-lp-fg2 font-sans">
+                        <td className="py-[10px] pr-[18px] pl-0 text-[13px] text-slate-600 font-sans">
                           {d}
                         </td>
                       </tr>
