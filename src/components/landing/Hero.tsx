@@ -55,7 +55,11 @@ export function Hero() {
             <kbd className="font-mono text-[11.5px] py-[2px] px-[7px] bg-white border border-stone-400 rounded-[3px] text-slate-900 shadow-[0_1px_0_#d6d3d1]">
               ⌘ ⇧ L
             </kbd>{' '}
-            and never leave the keyboard.
+            (Mac) or{' '}
+            <kbd className="font-mono text-[11.5px] py-[2px] px-[7px] bg-white border border-stone-400 rounded-[3px] text-slate-900 shadow-[0_1px_0_#d6d3d1]">
+              Ctrl ⇧ L
+            </kbd>{' '}
+            (Windows/Linux) to open the popup and never leave the keyboard.
           </p>
 
           <div className="flex gap-[10px] items-center mt-8 mb-[18px]">
