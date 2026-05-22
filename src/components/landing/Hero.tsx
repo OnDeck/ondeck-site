@@ -53,7 +53,7 @@ export function Hero() {
             A Chrome extension that ranks the reviews you actually owe people and the CI breakages
             you&rsquo;re causing above the watcher noise. Press{' '}
             <kbd className="font-mono text-[11.5px] py-[2px] px-[7px] bg-white border border-stone-400 rounded-[3px] text-slate-900 shadow-[0_1px_0_#d6d3d1]">
-              ⌘ ⇧ G
+              ⌘ ⇧ L
             </kbd>{' '}
             and never leave the keyboard.
           </p>
