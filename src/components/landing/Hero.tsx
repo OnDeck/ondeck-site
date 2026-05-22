@@ -18,6 +18,14 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
+          <motion.img
+            src="/icons/icon-128.png"
+            alt="OnDeck"
+            className="w-16 h-16 mb-4"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+          />
           <motion.div
             className="inline-flex items-center gap-2 py-[5px] pr-3 pl-2 bg-white border border-stone-300 rounded-full text-[12.5px] text-slate-700 mb-6"
             initial={{ opacity: 0, scale: 0.9 }}

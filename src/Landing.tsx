@@ -17,7 +17,7 @@ export default function Landing() {
       <Note />
       <Tour />
       <Shortcuts />
-      <Filters />
+      {/* <Filters /> */}
       <Changelog />
       <FAQ />
       <Install />
