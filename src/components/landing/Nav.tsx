@@ -19,7 +19,7 @@ export function Nav() {
           alt="OnDeck"
           className="w-[22px] h-[22px] -rotate-[4deg]"
         />
-        <span className="text-[15px] font-semibold tracking-tight">ondeck</span>
+        <span className="text-[18px] font-semibold tracking-tight">Ondeck</span>
       </motion.a>
 
       <div className="flex-1" />

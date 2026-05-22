@@ -6,7 +6,7 @@ export function SiteFooter() {
         <span className="text-slate-300">·</span>
         <span>MIT</span>
         <span className="text-slate-300">·</span>
-        <a href="#" className="text-slate-600 no-underline hover:text-slate-700 transition-colors">
+        {/* <a href="#" className="text-slate-600 no-underline hover:text-slate-700 transition-colors">
           source
         </a>
         <a href="#" className="text-slate-600 no-underline hover:text-slate-700 transition-colors">
@@ -14,8 +14,8 @@ export function SiteFooter() {
         </a>
         <a href="#" className="text-slate-600 no-underline hover:text-slate-700 transition-colors">
           privacy
-        </a>
-        <span className="ml-auto text-slate-400">built by one tired engineer · in Brooklyn</span>
+        </a> */}
+        <span className="ml-auto text-slate-400">built by one tired engineer · in Manchester</span>
       </div>
     </footer>
   );

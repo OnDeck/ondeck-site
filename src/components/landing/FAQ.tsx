@@ -26,7 +26,7 @@ const qs: FAQItem[] = [
 
 export function FAQ() {
   return (
-    <section className="py-18 px-7 border-t border-stone-300 bg-white">
+    <section className="py-24 px-7 border-t border-stone-300 bg-white">
       <div className="max-w-[800px] mx-auto">
         <h2 className="text-4xl tracking-tight font-semibold text-slate-900 m-0 mb-7 leading-tight">
           <span className="text-red-600">Honest</span> questions.

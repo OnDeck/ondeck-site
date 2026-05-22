@@ -42,7 +42,7 @@ const lines: CodeLine[] = [
 
 export function Filters() {
   return (
-    <section id="filters" className="py-18 px-7 border-t border-stone-300 bg-stone-100">
+    <section id="filters" className="py-24 px-7 border-t border-stone-300 bg-stone-100">
       <div className="max-w-[1120px] mx-auto grid grid-cols-2 gap-14 items-start">
         <motion.div
           initial={{ opacity: 0, x: -30 }}

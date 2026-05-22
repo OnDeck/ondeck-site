@@ -72,7 +72,7 @@ export function Hero() {
         </motion.div>
 
         <motion.div
-          className="relative justify-self-end"
+          className="relative justify-self-end my-14"
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}

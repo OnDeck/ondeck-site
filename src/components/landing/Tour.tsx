@@ -23,7 +23,7 @@ const itemVariants = {
 
 export function Tour() {
   return (
-    <section id="tour" className="py-18 px-7 border-t border-stone-300 bg-white">
+    <section id="tour" className="py-24 px-7 border-t border-stone-300 bg-white">
       <div className="max-w-[1120px] mx-auto">
         <h2 className="text-4xl tracking-tight font-semibold text-slate-900 m-0 mb-3 leading-tight">
           What&rsquo;s <span className="text-blue-600">in</span> the popup.

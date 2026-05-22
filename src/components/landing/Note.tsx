@@ -2,9 +2,9 @@ import { motion } from 'framer-motion';
 
 export function Note() {
   return (
-    <section className="px-7 pb-16">
+    <section className="px-7 pb-16 pt-4">
       <motion.div
-        className="max-w-[760px] mx-auto py-6 px-[26px] bg-stone-100 border border-stone-300 rounded-[10px] relative"
+        className="max-w-[760px] mx-auto py-8 px-[26px] bg-stone-100 border border-stone-300 rounded-[10px] relative"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}

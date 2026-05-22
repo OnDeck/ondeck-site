@@ -4,7 +4,7 @@ export function Install() {
   return (
     <section
       id="install"
-      className="py-22 px-7 border-t border-stone-300 relative overflow-hidden"
+      className="py-16 px-7 border-t border-stone-300 relative overflow-hidden"
       style={{
         background: 'linear-gradient(180deg, #fdfbf7 0%, #fbf0d8 100%)',
       }}
