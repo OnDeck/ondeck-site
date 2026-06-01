@@ -108,7 +108,7 @@ export function Tour() {
                 tone="green"
                 num="05"
                 title="Real-time sync"
-                body="Syncs every 15 minutes in the background. When new notifications arrive, the popup auto-refreshes and optionally plays a sound—no manual refresh needed."
+                body="Background sync on your schedule (configurable in settings). When new notifications arrive, the popup auto-refreshes and optionally plays a sound—no manual refresh needed."
               />
             </motion.div>
             <motion.div variants={itemVariants}>
