@@ -31,9 +31,9 @@ export function Tour() {
         <p className="text-base text-slate-700 leading-[1.55] m-0 max-w-[560px] tracking-tight">
           Press{' '}
           <kbd className="font-mono text-[11.5px] py-[1px] px-[6px] bg-white border border-stone-400 rounded-[3px] text-slate-900 shadow-[0_1px_0_#d6d3d1]">
-            ⌘ ⇧ G
+            ⌘ ⇧ L
           </kbd>{' '}
-          to open (or click the toolbar icon). Everything you can do, you can do without the mouse.
+          to open (or click the toolbar icon).
         </p>
 
         <div className="mt-12 grid grid-cols-[1fr_440px_1fr] gap-14 items-center">
@@ -48,8 +48,8 @@ export function Tour() {
               <Annotation
                 tone="red"
                 num="01"
-                title="Priority groups"
-                body="Critical means CI is broken or a security alert dropped. Important means you're blocking someone or someone's blocking you. Everything else falls down."
+                title="Priority ranking"
+                body="A CI breakage or security alert ranks above a thumbs-up on a closed issue. The things that need you surface to the top of the list automatically."
               />
             </motion.div>
             <motion.div variants={itemVariants}>
@@ -57,7 +57,7 @@ export function Tour() {
                 tone="blue"
                 num="02"
                 title="Quick filters"
-                body="One tap to scope to PRs, Issues, mentions, reviews, or CI failures. Click the filter icon for advanced filtering by repository, date range, or priority."
+                body="One tap to scope to PRs, Issues, mentions, reviews, CI, or security. Click the filter icon for advanced filtering by repository and date range."
               />
             </motion.div>
             <motion.div variants={itemVariants}>
@@ -80,7 +80,7 @@ export function Tour() {
             <OnDeckPopup
               density="cozy"
               filterMode="chips"
-              groupBy="priority"
+              groupBy="none"
               priorityColors
               theme="dark"
               width={440}
@@ -99,24 +99,24 @@ export function Tour() {
               <Annotation
                 tone="amber"
                 num="04"
-                title="Density toggle"
-                body="Three settings. Compact fits 16 rows per popup. Spacious is for when you actually want to read."
+                title="Instant search"
+                body="Hit ⌘K to filter by title or repository as you type. No round-trip — it searches what's already loaded."
               />
             </motion.div>
             <motion.div variants={itemVariants}>
               <Annotation
                 tone="green"
                 num="05"
-                title="Inline triage"
-                body="Archive, snooze, mute thread, mark read — all from the keyboard. The footer always shows what's available."
+                title="Real-time sync"
+                body="Syncs every 15 minutes in the background. When new notifications arrive, the popup auto-refreshes and optionally plays a sound—no manual refresh needed."
               />
             </motion.div>
             <motion.div variants={itemVariants}>
               <Annotation
                 tone="blue"
                 num="06"
-                title="Group however"
-                body="By priority, repository, or time bucket. Group headers collapse. State sticks per session."
+                title="Runs on your token"
+                body="Talks to GitHub directly with your personal access token. Nothing routes through a server — works with github.com and Enterprise."
               />
             </motion.div>
           </motion.div>

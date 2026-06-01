@@ -22,10 +22,7 @@ const groups: ShortcutGroup[] = [
     head: 'navigate',
     rows: [
       ['⌘ ⇧ L', 'open popup'],
-      // ['j', 'next notification'],
-      // ['k', 'previous notification'],
-      // ['o · enter', 'open in github'],
-      // ['g i', 'go to inbox'],
+      ['⌘ K', 'search'],
     ],
   },
   {
@@ -49,11 +46,10 @@ export function Shortcuts() {
     <section id="shortcuts" className="py-24 px-7 border-t border-stone-300">
       <div className="max-w-[1120px] mx-auto">
         <h2 className="text-4xl tracking-tight font-semibold text-slate-900 m-0 mb-3 leading-tight">
-          Every <span className="text-amber-600">key</span>, mapped.
+          Keys, <span className="text-amber-600">mapped</span>.
         </h2>
         <p className="text-base text-slate-700 leading-[1.55] m-0 max-w-[560px] tracking-tight">
-          OnDeck is for people who&rsquo;d rather memorize fifteen keys than move a mouse.
-          Press <kbd className="font-mono text-[11.5px] py-[1px] px-[6px] bg-white border border-stone-400 rounded-[3px] text-slate-900 shadow-[0_1px_0_#d6d3d1]">?</kbd> anywhere to see this list inside the popup.
+          Open and search without touching the mouse. More triage and filter shortcuts are on the way.
         </p>
 
         <motion.div

@@ -7,6 +7,7 @@ import { Filters } from './components/landing/Filters';
 import { Changelog } from './components/landing/Changelog';
 import { FAQ } from './components/landing/FAQ';
 import { Install } from './components/landing/Install';
+import { Setup } from './components/landing/Setup';
 import { SiteFooter } from './components/landing/SiteFooter';
 
 export default function Landing() {
@@ -21,6 +22,7 @@ export default function Landing() {
       <Changelog />
       <FAQ />
       <Install />
+      <Setup />
       <SiteFooter />
     </div>
   );
