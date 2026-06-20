@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import OnDeckPopup from '../../Popup';
+import { GITHUB_REPO_URL } from './constants';
 
 export function Hero() {
   return (
@@ -71,7 +72,7 @@ export function Hero() {
               <span className="font-mono text-[11px] opacity-60">↗</span>
             </a>
             <a
-              href="https://github.com/OnDeck/ondeck-extension"
+              href={GITHUB_REPO_URL}
               className="py-[11px] px-4 bg-transparent text-slate-900 border border-stone-400 rounded-[7px] text-sm font-medium no-underline tracking-tight whitespace-nowrap hover:border-slate-600 transition-colors"
             >
               View source
@@ -79,7 +80,7 @@ export function Hero() {
           </div>
 
           <p className="text-[12.5px] text-slate-600 m-0 tracking-tight font-mono">
-            free · local-only · personal &amp; GHES
+            free · local-only · open source
           </p>
         </motion.div>
 

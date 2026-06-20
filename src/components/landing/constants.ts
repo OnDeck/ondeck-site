@@ -8,3 +8,14 @@ export const TONE_MAP = {
 };
 
 export type ToneColor = keyof typeof TONE_MAP;
+
+// External links, kept in one place so install/source/token URLs stay in sync.
+// NOTE: replace CHROME_WEB_STORE_URL with the final listing URL (it includes the
+// published extension id) once the store page is live.
+export const CHROME_WEB_STORE_URL =
+  'https://chromewebstore.google.com/detail/ondeck';
+export const GITHUB_REPO_URL = 'https://github.com/OnDeck/ondeck-extension';
+// The extension authenticates with /user and reads notifications + repo data,
+// so it needs read:user in addition to notifications and repo.
+export const GITHUB_TOKEN_URL =
+  'https://github.com/settings/tokens/new?description=OnDeck&scopes=read:user,notifications,repo';

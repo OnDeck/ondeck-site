@@ -116,7 +116,7 @@ export function Tour() {
                 tone="blue"
                 num="06"
                 title="Runs on your token"
-                body="Talks to GitHub directly with your personal access token. Nothing routes through a server — works with github.com and Enterprise."
+                body="Talks to GitHub directly with your personal access token. Nothing routes through a server — your token stays in Chrome's storage on your machine."
               />
             </motion.div>
           </motion.div>

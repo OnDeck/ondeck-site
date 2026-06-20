@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { CHROME_WEB_STORE_URL } from './constants';
 
 export function Install() {
   return (
@@ -28,14 +29,16 @@ export function Install() {
         </p>
         <div className="flex gap-[10px] justify-center flex-wrap">
           <a
-            href="#"
+            href={CHROME_WEB_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="py-[13px] px-[22px] bg-slate-900 text-white rounded-[7px] text-[15px] font-medium no-underline tracking-tight whitespace-nowrap inline-flex items-center gap-[9px] shadow-[0_4px_14px_-4px_rgba(0,0,0,0.3)] hover:bg-opacity-90 transition-all"
           >
             Install for Chrome
             <span className="font-mono text-xs opacity-55">↗</span>
           </a>
           <a
-            href="#"
+            href="#setup"
             className="py-[13px] px-[18px] bg-white/60 text-slate-900 border border-stone-400 rounded-[7px] text-[15px] font-medium no-underline tracking-tight whitespace-nowrap backdrop-blur-[6px] hover:bg-white/80 transition-all"
           >
             Setup notes

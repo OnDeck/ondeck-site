@@ -12,7 +12,7 @@ const qs: FAQItem[] = [
   },
   {
     q: 'Does it work with GitHub Enterprise?',
-    a: 'Yes. Set a custom API hostname in settings. SSO works because Chrome handles the cookies.',
+    a: 'Not yet. OnDeck currently talks to github.com (api.github.com) only. GitHub Enterprise Server support — a custom API hostname in settings — is on the roadmap, not shipped.',
   },
   {
     q: "Why not just use GitHub's own notifications page?",
