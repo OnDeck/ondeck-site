@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { GITHUB_REPO_URL } from './constants';
 
 export function Nav() {
   return (
@@ -19,7 +20,7 @@ export function Nav() {
           alt="OnDeck"
           className="w-[22px] h-[22px] -rotate-[4deg]"
         />
-        <span className="text-[18px] font-semibold tracking-tight">Ondeck</span>
+        <span className="text-[18px] font-semibold tracking-tight">OnDeck</span>
       </motion.a>
 
       <div className="flex-1" />
@@ -36,10 +37,10 @@ export function Nav() {
         <a href="#shortcuts" className="text-slate-700 no-underline tracking-tight hover:text-slate-900 transition-colors">
           Shortcuts
         </a>
-        <a href="#filters" className="text-slate-700 no-underline tracking-tight hover:text-slate-900 transition-colors">
-          Filters
+        <a href="#setup" className="text-slate-700 no-underline tracking-tight hover:text-slate-900 transition-colors">
+          Setup
         </a>
-        <a href="https://github.com/OnDeck/ondeck-extension" className="text-slate-700 no-underline tracking-tight hover:text-slate-900 transition-colors">
+        <a href={GITHUB_REPO_URL} className="text-slate-700 no-underline tracking-tight hover:text-slate-900 transition-colors">
           Source
         </a>
         <a

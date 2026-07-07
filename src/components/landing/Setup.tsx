@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { CHROME_WEB_STORE_URL, GITHUB_TOKEN_URL } from './constants';
 
 export function Setup() {
   return (
@@ -38,7 +39,9 @@ export function Setup() {
               <p className="text-[15px] text-slate-700 leading-[1.55] m-0 mb-3 tracking-tight">
                 Head to the{' '}
                 <a
-                  href="#"
+                  href={CHROME_WEB_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-blue-700 underline underline-offset-2 hover:text-blue-800"
                 >
                   Chrome Web Store
@@ -65,7 +68,7 @@ export function Setup() {
               <p className="text-[15px] text-slate-700 leading-[1.55] m-0 mb-3 tracking-tight">
                 Go to{' '}
                 <a
-                  href="https://github.com/settings/tokens/new?description=OnDeck&scopes=notifications,repo"
+                  href={GITHUB_TOKEN_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-700 underline underline-offset-2 hover:text-blue-800"
@@ -74,9 +77,13 @@ export function Setup() {
                 </a>{' '}
                 and create a new token with{' '}
                 <code className="font-mono text-[13px] py-[2px] px-[6px] bg-stone-100 border border-stone-300 rounded text-slate-900">
+                  read:user
+                </code>
+                ,{' '}
+                <code className="font-mono text-[13px] py-[2px] px-[6px] bg-stone-100 border border-stone-300 rounded text-slate-900">
                   notifications
-                </code>{' '}
-                and{' '}
+                </code>
+                , and{' '}
                 <code className="font-mono text-[13px] py-[2px] px-[6px] bg-stone-100 border border-stone-300 rounded text-slate-900">
                   repo
                 </code>{' '}
@@ -120,11 +127,12 @@ export function Setup() {
                 Set up the keyboard shortcut
               </h3>
               <p className="text-[15px] text-slate-700 leading-[1.55] m-0 mb-3 tracking-tight">
-                Navigate to{' '}
+                OnDeck ships with a shortcut already mapped to the keys below. To
+                change it, head to{' '}
                 <code className="font-mono text-[13px] py-[2px] px-[6px] bg-stone-100 border border-stone-300 rounded text-slate-900">
                   chrome://extensions/shortcuts
                 </code>
-                , find OnDeck, and set the &ldquo;Open popup&rdquo; shortcut. We recommend:
+                , find OnDeck, and edit the &ldquo;Open popup&rdquo; binding.
               </p>
               <div className="flex gap-3 flex-wrap">
                 <div className="py-2 px-3 bg-stone-50 border border-stone-300 rounded-md">
@@ -168,25 +176,6 @@ export function Setup() {
           </div>
         </motion.div>
 
-        <motion.div
-          className="mt-4 p-5 bg-amber-50 border border-amber-200 rounded-[10px]"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-        >
-          <div className="flex items-start gap-3">
-            <span className="text-lg">💡</span>
-            <div>
-              <h4 className="text-sm font-semibold text-slate-900 m-0 mb-1 tracking-tight">
-                GitHub Enterprise support
-              </h4>
-              <p className="text-[13.5px] text-slate-700 leading-[1.5] m-0 tracking-tight">
-                Using GitHub Enterprise Server? OnDeck supports custom GitHub instances. Just enter your GHES URL in the settings after installing.
-              </p>
-            </div>
-          </div>
-        </motion.div>
       </motion.div>
     </section>
   );
