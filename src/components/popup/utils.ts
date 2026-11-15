@@ -1,20 +1,7 @@
-import type { Priority, Notification, NotificationGroup, GroupBy } from '../../types';
+import type { Notification, NotificationGroup, GroupBy } from '../../types';
 
 export function groupNotifs(list: Notification[], by: GroupBy): NotificationGroup[] {
   if (by === 'none') return [{ key: 'all', label: null, items: list }];
-
-  if (by === 'priority') {
-    const order: Priority[] = ['critical', 'important', 'normal', 'muted'];
-    const labels: Record<Priority, string> = {
-      critical: 'Critical',
-      important: 'Important',
-      normal: 'Normal',
-      muted: 'Muted',
-    };
-    return order
-      .map((k) => ({ key: k, label: labels[k], items: list.filter((n) => n.priority === k) }))
-      .filter((g) => g.items.length > 0);
-  }
 
   if (by === 'repository') {
     const map = new Map<string, Notification[]>();

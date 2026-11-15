@@ -16,7 +16,7 @@ const qs: FAQItem[] = [
   },
   {
     q: "Why not just use GitHub's own notifications page?",
-    a: "Because that page treats a CI failure on main the same as a thumbs-up on a closed issue, and you can't scope it by repo + type + recency in one filter. OnDeck exists because nobody at GitHub seems to care to fix this.",
+    a: "Because that page lives in a tab you have to remember to open, and a review someone is blocked on gets the same weight as a bot comment on a thread you only watch. OnDeck sits in your toolbar and marks the threads waiting on you. It exists because nobody at GitHub seems to care to fix this.",
   },
   {
     q: 'Is it really free?',

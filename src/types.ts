@@ -1,5 +1,3 @@
-export type Priority = 'critical' | 'important' | 'normal' | 'muted';
-
 export type NotificationType =
   | 'pr'
   | 'review'
@@ -12,7 +10,6 @@ export type NotificationType =
 
 export interface Notification {
   id: string;
-  priority: Priority;
   type: NotificationType;
   repo: string;
   org: string;
@@ -38,7 +35,7 @@ export interface Filter {
 export type Density = 'compact' | 'cozy' | 'spacious';
 export type Theme = 'dark' | 'light';
 export type FilterMode = 'chips' | 'search';
-export type GroupBy = 'none' | 'priority' | 'repository';
+export type GroupBy = 'none' | 'repository';
 
 export interface ThemeTokens {
   bg0: string;
@@ -55,10 +52,6 @@ export interface ThemeTokens {
   accent: string;
   accentSoft: string;
   accentBorder: string;
-  critical: string;
-  criticalSoft: string;
-  important: string;
-  importantSoft: string;
   success: string;
   successSoft: string;
   muted: string;
