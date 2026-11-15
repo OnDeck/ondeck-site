@@ -3,7 +3,6 @@ import type { Notification, Filter } from './types';
 export const ONDECK_NOTIFS: Notification[] = [
   {
     id: 'n1',
-    priority: 'critical',
     type: 'ci',
     repo: 'acme/api-gateway',
     org: 'acme',
@@ -20,7 +19,6 @@ export const ONDECK_NOTIFS: Notification[] = [
   },
   {
     id: 'n2',
-    priority: 'critical',
     type: 'security',
     repo: 'acme/web',
     org: 'acme',
@@ -36,7 +34,6 @@ export const ONDECK_NOTIFS: Notification[] = [
   },
   {
     id: 'n3',
-    priority: 'important',
     type: 'review',
     repo: 'stripe-clone/payments',
     org: 'stripe-clone',
@@ -52,7 +49,6 @@ export const ONDECK_NOTIFS: Notification[] = [
   },
   {
     id: 'n4',
-    priority: 'important',
     type: 'mention',
     repo: 'acme/web',
     org: 'acme',
@@ -68,7 +64,6 @@ export const ONDECK_NOTIFS: Notification[] = [
   },
   {
     id: 'n5',
-    priority: 'important',
     type: 'review',
     repo: 'acme/api-gateway',
     org: 'acme',
@@ -84,7 +79,6 @@ export const ONDECK_NOTIFS: Notification[] = [
   },
   {
     id: 'n6',
-    priority: 'normal',
     type: 'pr',
     repo: 'acme/web',
     org: 'acme',
@@ -100,7 +94,6 @@ export const ONDECK_NOTIFS: Notification[] = [
   },
   {
     id: 'n7',
-    priority: 'normal',
     type: 'issue',
     repo: 'acme/api-gateway',
     org: 'acme',
@@ -116,7 +109,6 @@ export const ONDECK_NOTIFS: Notification[] = [
   },
   {
     id: 'n8',
-    priority: 'normal',
     type: 'ci',
     repo: 'acme/web',
     org: 'acme',
@@ -132,7 +124,6 @@ export const ONDECK_NOTIFS: Notification[] = [
   },
   {
     id: 'n9',
-    priority: 'muted',
     type: 'release',
     repo: 'vercel-style/next',
     org: 'vercel-style',
@@ -148,7 +139,6 @@ export const ONDECK_NOTIFS: Notification[] = [
   },
   {
     id: 'n10',
-    priority: 'muted',
     type: 'discussion',
     repo: 'acme/docs',
     org: 'acme',
@@ -164,7 +154,6 @@ export const ONDECK_NOTIFS: Notification[] = [
   },
   {
     id: 'n11',
-    priority: 'muted',
     type: 'pr',
     repo: 'acme/docs',
     org: 'acme',
@@ -180,7 +169,6 @@ export const ONDECK_NOTIFS: Notification[] = [
   },
   {
     id: 'n12',
-    priority: 'muted',
     type: 'issue',
     repo: 'oss-style/zod',
     org: 'oss-style',

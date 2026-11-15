@@ -22,7 +22,7 @@ interface OnDeckPopupProps {
 export default function OnDeckPopup({
   density = 'cozy',
   filterMode = 'chips',
-  groupBy = 'priority',
+  groupBy = 'none',
   theme = 'dark',
   width = 400,
   height = 600,
