@@ -1,0 +1,9 @@
+[
+  {
+    "v": "1.0.0",
+    "d": "today",
+    "tag": "launch",
+    "tone": "green",
+    "items": ["Local telemetry dashboard. None of it leaves your laptop."]
+  }
+]

@@ -1,4 +1,5 @@
 import { TONE_MAP, type ToneColor } from './constants';
+import changelog from './changelog.json';
 
 interface ChangelogEntry {
   v: string;
@@ -8,15 +9,8 @@ interface ChangelogEntry {
   items: string[];
 }
 
-const entries: ChangelogEntry[] = [
-  {
-    v: '1.0.0',
-    d: 'today',
-    tag: 'launch',
-    tone: 'green',
-    items: ['Local telemetry dashboard. None of it leaves your laptop.'],
-  },
-];
+// JSON imports widen tone to string; scripts/updateChangelog.js validates it against TONE_MAP
+const entries = changelog as ChangelogEntry[];
 
 export function Changelog() {
   return (

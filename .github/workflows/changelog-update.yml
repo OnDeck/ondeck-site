@@ -1,0 +1,45 @@
+name: Changelog Update
+
+on:
+  repository_dispatch:
+    types: [changelog_update]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: changelog-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Update changelog
+        env:
+          PAYLOAD: ${{ toJson(github.event.client_payload) }}
+        run: node scripts/updateChangelog.js
+
+      # No [skip ci]: this push to main should redeploy the site
+      - name: Commit and push
+        env:
+          VERSION: ${{ github.event.client_payload.version }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/components/landing/changelog.json
+          if git diff --staged --quiet; then
+            echo "Changelog already at v$VERSION"
+          else
+            git commit -m "chore(changelog): update to v$VERSION"
+            git push origin HEAD:main
+          fi
