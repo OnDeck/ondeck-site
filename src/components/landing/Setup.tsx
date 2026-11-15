@@ -170,7 +170,7 @@ export function Setup() {
                 Your token stays local
               </h4>
               <p className="text-[13.5px] text-slate-700 leading-[1.5] m-0 tracking-tight">
-                OnDeck stores your GitHub token locally in Chrome&rsquo;s secure storage. It never leaves your browser and is never sent to any server.
+                OnDeck stores your GitHub token in this browser&rsquo;s extension storage. It&rsquo;s only ever sent to GitHub&rsquo;s API, never to a server of ours.
               </p>
             </div>
           </div>

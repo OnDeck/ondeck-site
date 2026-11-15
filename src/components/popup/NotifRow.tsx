@@ -1,22 +1,19 @@
 import type { Notification, Density, ThemeTokens } from '../../types';
 import { DENSITY_PRESETS } from './constants';
-import { priorityColor } from './utils';
-import { PriorityBar } from './PriorityBar';
+import { NeedsYouBar } from './NeedsYouBar';
 import { Avatar } from './Avatar';
 import { TypeGlyph } from './TypeGlyph';
 
 interface NotifRowProps {
   n: Notification;
   density: Density;
-  priorityColors: boolean;
   selected: boolean;
   t: ThemeTokens;
   onClick: () => void;
 }
 
-export function NotifRow({ n, density, priorityColors, selected, t, onClick }: NotifRowProps) {
+export function NotifRow({ n, density, selected, t, onClick }: NotifRowProps) {
   const d = DENSITY_PRESETS[density];
-  const dim = n.priority === 'muted' || !n.unread;
 
   return (
     <div
@@ -28,7 +25,7 @@ export function NotifRow({ n, density, priorityColors, selected, t, onClick }: N
         background: selected ? t.bg3 : 'transparent',
         position: 'relative',
         transition: 'background 80ms ease',
-        opacity: dim && !n.unread ? 0.66 : 1,
+        opacity: n.unread ? 1 : 0.66,
       }}
       onMouseEnter={(e) => {
         if (!selected) e.currentTarget.style.background = t.bg2;
@@ -37,7 +34,7 @@ export function NotifRow({ n, density, priorityColors, selected, t, onClick }: N
         if (!selected) e.currentTarget.style.background = 'transparent';
       }}
     >
-      <PriorityBar priority={n.priority} priorityColors={priorityColors} t={t} />
+      <NeedsYouBar type={n.type} t={t} />
 
       <div
         style={{
@@ -54,9 +51,7 @@ export function NotifRow({ n, density, priorityColors, selected, t, onClick }: N
               width: 5,
               height: 5,
               borderRadius: 3,
-              background: priorityColors ? priorityColor(n.priority, t) : t.accent,
-              boxShadow:
-                priorityColors && n.priority === 'critical' ? `0 0 0 2px ${t.criticalSoft}` : 'none',
+              background: t.accent,
             }}
           />
         )}

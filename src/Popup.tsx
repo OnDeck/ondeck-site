@@ -12,7 +12,6 @@ import { Footer } from './components/popup/Footer';
 interface OnDeckPopupProps {
   density?: Density;
   filterMode?: FilterMode;
-  priorityColors?: boolean;
   groupBy?: GroupBy;
   theme?: Theme;
   width?: number;
@@ -23,7 +22,6 @@ interface OnDeckPopupProps {
 export default function OnDeckPopup({
   density = 'cozy',
   filterMode = 'chips',
-  priorityColors = true,
   groupBy = 'priority',
   theme = 'dark',
   width = 400,
@@ -40,8 +38,8 @@ export default function OnDeckPopup({
     const list = ONDECK_NOTIFS;
     if (activeFilter === 'all') return list;
     if (activeFilter === 'unread') return list.filter((n) => n.unread);
-    const f = ONDECK_FILTERS.find((x) => x.id === activeFilter);
-    if (f?.type) return list.filter((n) => n.type === f.type);
+    const types = ONDECK_FILTERS.find((x) => x.id === activeFilter)?.types;
+    if (types) return list.filter((n) => types.includes(n.type));
     return list;
   }, [activeFilter]);
 
@@ -114,7 +112,6 @@ export default function OnDeckPopup({
                       <NotifRow
                         n={n}
                         density={density}
-                        priorityColors={priorityColors}
                         selected={n.id === selectedId}
                         t={t}
                         onClick={() => setSelectedId(n.id)}
@@ -127,7 +124,7 @@ export default function OnDeckPopup({
         </div>
       </div>
 
-      <Footer t={t} selected={selectedId ? 1 : 0} density={density} />
+      <Footer t={t} density={density} />
     </div>
   );
 }

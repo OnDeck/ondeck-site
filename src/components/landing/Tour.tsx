@@ -36,9 +36,9 @@ export function Tour() {
           to open (or click the toolbar icon).
         </p>
 
-        <div className="mt-12 grid grid-cols-[1fr_440px_1fr] gap-14 items-center">
+        <div className="mt-12 grid grid-cols-1 lg:grid-cols-[1fr_440px_1fr] gap-10 lg:gap-14 items-center">
           <motion.div
-            className="flex flex-col gap-14 text-right"
+            className="flex flex-col gap-10 lg:gap-14 lg:text-right"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -48,8 +48,8 @@ export function Tour() {
               <Annotation
                 tone="red"
                 num="01"
-                title="Priority ranking"
-                body="A CI breakage or security alert ranks above a thumbs-up on a closed issue. The things that need you surface to the top of the list automatically."
+                title="Needs-you marker"
+                body="Review requests, mentions, assignments and security alerts get an accent bar. Threads you only watch don't, so the ones waiting on you stand out."
               />
             </motion.div>
             <motion.div variants={itemVariants}>
@@ -57,7 +57,7 @@ export function Tour() {
                 tone="blue"
                 num="02"
                 title="Quick filters"
-                body="One tap to scope to PRs, Issues, mentions, reviews, CI, or security. Click the filter icon for advanced filtering by repository and date range."
+                body="One tap to scope to Unread, Participating, Mentions, Reviews or Assigned. Click the filter icon to narrow by repository and date range."
               />
             </motion.div>
             <motion.div variants={itemVariants}>
@@ -65,13 +65,13 @@ export function Tour() {
                 tone="purple"
                 num="03"
                 title="Type codes"
-                body="PR · RV · @ · CI · SEC — same three letters every time, in the same colors. Skim once, you've read it."
+                body="PR · RV · @ · IS · CI · SEC: one short code per kind of thread, in the same colour every time. Skim once, you've read it."
               />
             </motion.div>
           </motion.div>
 
           <motion.div
-            className="w-[440px] h-[600px] rounded-[10px] overflow-hidden border border-stone-400 shadow-[0_20px_50px_-16px_rgba(60,40,15,0.22)] justify-self-center"
+            className="w-[440px] h-[600px] max-sm:[zoom:0.65] rounded-[10px] overflow-hidden border border-stone-400 shadow-[0_20px_50px_-16px_rgba(60,40,15,0.22)] justify-self-center"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -81,7 +81,6 @@ export function Tour() {
               density="cozy"
               filterMode="chips"
               groupBy="none"
-              priorityColors
               theme="dark"
               width={440}
               height={600}
@@ -89,7 +88,7 @@ export function Tour() {
           </motion.div>
 
           <motion.div
-            className="flex flex-col gap-14"
+            className="flex flex-col gap-10 lg:gap-14"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"

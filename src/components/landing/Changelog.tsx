@@ -22,7 +22,7 @@ export function Changelog() {
             return (
               <div
                 key={e.version}
-                className="grid grid-cols-[180px_1fr] gap-8 py-6 px-7"
+                className="grid grid-cols-1 sm:grid-cols-[180px_1fr] gap-3 sm:gap-8 py-6 px-5 sm:px-7"
                 style={{
                   borderBottom: i === entries.length - 1 ? 'none' : '1px solid #e7e0d2',
                 }}

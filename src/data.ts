@@ -199,9 +199,8 @@ export const ONDECK_NOTIFS: Notification[] = [
 export const ONDECK_FILTERS: Filter[] = [
   { id: 'all', label: 'Inbox', count: 12 },
   { id: 'unread', label: 'Unread', count: 5 },
-  { id: 'mentions', label: 'Mentions', count: 1, type: 'mention' },
-  { id: 'reviews', label: 'Reviews', count: 2, type: 'review' },
-  { id: 'assigned', label: 'Assigned', count: 1, type: 'issue' },
-  { id: 'ci', label: 'CI', count: 2, type: 'ci' },
-  { id: 'security', label: 'Security', count: 1, type: 'security' },
+  { id: 'participating', label: 'Participating', count: 8, types: ['pr', 'review', 'mention', 'issue', 'discussion'] },
+  { id: 'mentions', label: 'Mentions', count: 1, types: ['mention'] },
+  { id: 'reviews', label: 'Reviews', count: 2, types: ['review'] },
+  { id: 'assigned', label: 'Assigned', count: 2, types: ['issue'] },
 ];

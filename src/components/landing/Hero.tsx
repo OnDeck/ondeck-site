@@ -6,7 +6,7 @@ import { GITHUB_REPO_URL } from './constants';
 export function Hero() {
   return (
     <motion.section
-      className="py-22 px-7 relative overflow-hidden"
+      className="py-[88px] px-7 relative overflow-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
@@ -14,7 +14,7 @@ export function Hero() {
       <div className="absolute -top-[120px] -right-20 w-[460px] h-[460px] rounded-full bg-[radial-gradient(circle,rgba(42,95,217,0.10)_0%,transparent_70%)] pointer-events-none z-0" />
       <div className="absolute top-[120px] -left-[100px] w-[380px] h-[380px] rounded-full bg-[radial-gradient(circle,rgba(214,138,31,0.10)_0%,transparent_70%)] pointer-events-none z-0" />
 
-      <div className="relative z-[1] max-w-[1120px] mx-auto grid grid-cols-[1fr_480px] gap-[72px] items-center">
+      <div className="relative z-[1] max-w-[1120px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_480px] gap-12 lg:gap-[72px] items-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -44,7 +44,7 @@ export function Hero() {
             </span>
           </motion.div>
 
-          <h1 className="text-[62px] leading-none tracking-[-2.4px] font-semibold text-slate-900 m-0 mb-6">
+          <h1 className="text-[44px] sm:text-[62px] leading-none tracking-[-1.6px] sm:tracking-[-2.4px] font-semibold text-slate-900 m-0 mb-6">
             Your GitHub
             <br />
             inbox, but{' '}
@@ -54,19 +54,20 @@ export function Hero() {
             .
           </h1>
           <p className="text-[17px] leading-[1.55] text-slate-700 m-0 max-w-[460px] tracking-tight">
-            A Chrome extension that ranks the reviews you actually owe people and the CI breakages
-            you&rsquo;re causing above the watcher noise. Press{' '}
-            <kbd className="font-mono text-[11.5px] py-[2px] px-[7px] bg-white border border-stone-400 rounded-[3px] text-slate-900 shadow-[0_1px_0_#d6d3d1]">
+            A Chrome extension that puts your GitHub notifications in one quiet list and marks the
+            threads waiting on you (review requests, mentions, assignments) apart from the watcher
+            noise. Press{' '}
+            <kbd className="whitespace-nowrap font-mono text-[11.5px] py-[2px] px-[7px] bg-white border border-stone-400 rounded-[3px] text-slate-900 shadow-[0_1px_0_#d6d3d1]">
               ⌘ ⇧ L
             </kbd>{' '}
             (Mac) or{' '}
-            <kbd className="font-mono text-[11.5px] py-[2px] px-[7px] bg-white border border-stone-400 rounded-[3px] text-slate-900 shadow-[0_1px_0_#d6d3d1]">
+            <kbd className="whitespace-nowrap font-mono text-[11.5px] py-[2px] px-[7px] bg-white border border-stone-400 rounded-[3px] text-slate-900 shadow-[0_1px_0_#d6d3d1]">
               Ctrl ⇧ L
             </kbd>{' '}
             (Windows/Linux) to open the popup.
           </p>
 
-          <div className="flex gap-[10px] items-center mt-8 mb-[18px]">
+          <div className="flex flex-wrap gap-[10px] items-center mt-8 mb-[18px]">
             <a
               href="#install"
               className="py-[11px] px-[18px] bg-slate-900 text-white rounded-[7px] text-sm font-medium no-underline tracking-tight whitespace-nowrap inline-flex items-center gap-2 shadow-[0_1px_0_rgba(0,0,0,0.04),0_4px_12px_-4px_rgba(0,0,0,0.2)] hover:bg-opacity-90 transition-all"
@@ -88,7 +89,7 @@ export function Hero() {
         </motion.div>
 
         <motion.div
-          className="relative justify-self-end my-14"
+          className="relative hidden sm:block justify-self-center lg:justify-self-end my-14"
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
@@ -101,7 +102,6 @@ export function Hero() {
               density="cozy"
               filterMode="chips"
               groupBy="none"
-              priorityColors
               theme="dark"
               width={440}
               height={600}

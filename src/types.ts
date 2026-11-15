@@ -32,7 +32,7 @@ export interface Filter {
   id: string;
   label: string;
   count: number;
-  type?: NotificationType;
+  types?: NotificationType[];
 }
 
 export type Density = 'compact' | 'cozy' | 'spacious';
