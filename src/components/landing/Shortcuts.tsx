@@ -53,7 +53,7 @@ export function Shortcuts() {
         </p>
 
         <motion.div
-          className="mt-10 grid grid-cols-3 gap-4"
+          className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}

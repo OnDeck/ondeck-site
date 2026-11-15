@@ -31,16 +31,16 @@ export function Nav() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        <a href="#tour" className="text-slate-700 no-underline tracking-tight hover:text-slate-900 transition-colors">
+        <a href="#tour" className="hidden sm:inline text-slate-700 no-underline tracking-tight hover:text-slate-900 transition-colors">
           Tour
         </a>
-        <a href="#shortcuts" className="text-slate-700 no-underline tracking-tight hover:text-slate-900 transition-colors">
+        <a href="#shortcuts" className="hidden sm:inline text-slate-700 no-underline tracking-tight hover:text-slate-900 transition-colors">
           Shortcuts
         </a>
-        <a href="#setup" className="text-slate-700 no-underline tracking-tight hover:text-slate-900 transition-colors">
+        <a href="#setup" className="hidden sm:inline text-slate-700 no-underline tracking-tight hover:text-slate-900 transition-colors">
           Setup
         </a>
-        <a href={GITHUB_REPO_URL} className="text-slate-700 no-underline tracking-tight hover:text-slate-900 transition-colors">
+        <a href={GITHUB_REPO_URL} className="hidden sm:inline text-slate-700 no-underline tracking-tight hover:text-slate-900 transition-colors">
           Source
         </a>
         <a

@@ -1,11 +1,4 @@
-import type { Priority, ThemeTokens, Notification, NotificationGroup, GroupBy } from '../../types';
-
-export function priorityColor(p: Priority, t: ThemeTokens): string {
-  if (p === 'critical') return t.critical;
-  if (p === 'important') return t.important;
-  if (p === 'normal') return t.accent;
-  return t.fg3;
-}
+import type { Priority, Notification, NotificationGroup, GroupBy } from '../../types';
 
 export function groupNotifs(list: Notification[], by: GroupBy): NotificationGroup[] {
   if (by === 'none') return [{ key: 'all', label: null, items: list }];

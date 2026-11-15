@@ -46,10 +46,3 @@ export const ChevronIcon = (props: SVGProps<SVGSVGElement>) => (
     <path d="M2.5 3.5l2.5 2.5 2.5-2.5" />
   </svg>
 );
-
-export const LogoIcon = (props: SVGProps<SVGSVGElement>) => (
-  <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" {...props}>
-    <rect x="1" y="2" width="12" height="2.4" rx="0.6" />
-    <rect x="5.8" y="4.4" width="2.4" height="7.6" rx="0.6" />
-  </svg>
-);

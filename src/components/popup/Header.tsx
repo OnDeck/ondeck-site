@@ -1,5 +1,5 @@
 import type { ThemeTokens, DensityPreset } from '../../types';
-import { SearchIcon, CogIcon, LogoIcon } from './Icons';
+import { SearchIcon, CogIcon } from './Icons';
 
 interface HeaderProps {
   t: ThemeTokens;
@@ -20,23 +20,7 @@ export function Header({ t, d, count }: HeaderProps) {
         flexShrink: 0,
       }}
     >
-      <div
-        style={{
-          width: 22,
-          height: 22,
-          borderRadius: 5,
-          background: 'linear-gradient(180deg, #1d2128 0%, #11141a 100%)',
-          border: `1px solid ${t.lineStrong}`,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          color: t.fg0,
-          marginRight: 10,
-          boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.04)',
-        }}
-      >
-        <LogoIcon style={{ width: 11, height: 11 }} />
-      </div>
+      <img src="/icons/icon.svg" alt="" style={{ width: 22, height: 22, marginRight: 10 }} />
       <div style={{ fontSize: 13, fontWeight: 600, color: t.fg0, letterSpacing: -0.2 }}>
         OnDeck
       </div>
