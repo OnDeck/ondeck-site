@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import OnDeckPopup from '../../Popup';
+import { latestRelease } from '../../releases';
 import { GITHUB_REPO_URL } from './constants';
 
 export function Hero() {
@@ -38,7 +39,9 @@ export function Hero() {
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
             />
-            <span className="font-mono text-[11.5px]">v1.0.0</span>
+            <span className="font-mono text-[11.5px]">
+              {latestRelease ? `v${latestRelease.version}` : 'early access'}
+            </span>
           </motion.div>
 
           <h1 className="text-[62px] leading-none tracking-[-2.4px] font-semibold text-slate-900 m-0 mb-6">

@@ -1,8 +1,12 @@
+import { latestRelease } from '../../releases';
+
 export function SiteFooter() {
   return (
     <footer className="py-[26px] px-7 border-t border-stone-300 bg-stone-50">
       <div className="max-w-[1120px] mx-auto flex items-center gap-4 flex-wrap text-[12.5px] text-slate-600 font-mono tracking-wide">
-        <span className="text-slate-700">ondeck 1.0.0</span>
+        <span className="text-slate-700">
+          ondeck{latestRelease ? ` ${latestRelease.version}` : ''}
+        </span>
         <span className="text-slate-300">·</span>
         <span>MIT</span>
         <span className="text-slate-300">·</span>

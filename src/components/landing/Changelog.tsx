@@ -1,24 +1,12 @@
-import { TONE_MAP, type ToneColor } from './constants';
+import { releases } from '../../releases';
+import { TONE_MAP } from './constants';
 
-interface ChangelogEntry {
-  v: string;
-  d: string;
-  tag: string;
-  tone: ToneColor;
-  items: string[];
-}
-
-const entries: ChangelogEntry[] = [
-  {
-    v: '1.0.0',
-    d: 'today',
-    tag: 'launch',
-    tone: 'green',
-    items: ['Local telemetry dashboard. None of it leaves your laptop.'],
-  },
-];
+const SHOWN_RELEASES = 3;
 
 export function Changelog() {
+  const entries = releases.slice(0, SHOWN_RELEASES);
+  if (entries.length === 0) return null;
+
   return (
     <section className="py-24 px-7 border-t border-stone-300">
       <div className="max-w-[1120px] mx-auto">
@@ -26,9 +14,6 @@ export function Changelog() {
           <h2 className="text-4xl tracking-tight font-semibold text-slate-900 m-0 leading-tight">
             What changed <span className="text-green-600">recently</span>.
           </h2>
-          <a href="#" className="text-[13px] text-blue-600 no-underline tracking-tight hover:underline">
-            full changelog →
-          </a>
         </div>
 
         <div className="bg-white border border-stone-300 rounded-[10px] overflow-hidden">
@@ -36,7 +21,7 @@ export function Changelog() {
             const T = TONE_MAP[e.tone];
             return (
               <div
-                key={e.v}
+                key={e.version}
                 className="grid grid-cols-[180px_1fr] gap-8 py-6 px-7"
                 style={{
                   borderBottom: i === entries.length - 1 ? 'none' : '1px solid #e7e0d2',
@@ -44,7 +29,7 @@ export function Changelog() {
               >
                 <div>
                   <div className="text-base font-mono text-slate-900 font-semibold tracking-tight mb-1">
-                    v{e.v}
+                    v{e.version}
                   </div>
                   <div className="flex items-center gap-[6px] text-xs text-slate-600 font-mono">
                     <span
@@ -53,7 +38,7 @@ export function Changelog() {
                     >
                       {e.tag}
                     </span>
-                    <span>{e.d}</span>
+                    <span>{e.date}</span>
                   </div>
                 </div>
                 <ul className="m-0 p-0 list-none flex flex-col gap-[9px]">
