@@ -1,0 +1,70 @@
+name: Changelog Update
+
+# Sent by OnDeck/ondeck-extension's Release workflow. The manual trigger is
+# for testing the site side without cutting a release.
+on:
+  repository_dispatch:
+    types: [changelog_update]
+  workflow_dispatch:
+    inputs:
+      payload:
+        description: 'Release JSON: {"version","date","tag","tone","items"}'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: changelog-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      # The payload carries commit subjects, so it goes through env into a
+      # file and is never interpolated into a shell command.
+      - name: Write payload
+        env:
+          DISPATCH_PAYLOAD: ${{ toJson(github.event.client_payload) }}
+          MANUAL_PAYLOAD: ${{ inputs.payload }}
+        run: |
+          if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ]; then
+            printf '%s' "$MANUAL_PAYLOAD" > "$RUNNER_TEMP/payload.json"
+          else
+            printf '%s' "$DISPATCH_PAYLOAD" > "$RUNNER_TEMP/payload.json"
+          fi
+
+      - name: Add release
+        run: node scripts/add-release.mjs "$RUNNER_TEMP/payload.json"
+
+      - name: Build
+        run: npm run build
+
+      - name: Commit and push
+        run: |
+          VERSION=$(node -p "require('./src/releases.json')[0].version")
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/releases.json
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "chore(changelog): v$VERSION"
+          git push origin HEAD:main
+          echo "### Site changelog updated to v$VERSION" >> "$GITHUB_STEP_SUMMARY"
