@@ -22,21 +22,29 @@ const groups: ShortcutGroup[] = [
     head: 'navigate',
     rows: [
       ['⌘ ⇧ L', 'open popup'],
-      ['⌘ K', 'search'],
+      ['j / k', 'next / previous'],
+      ['↓ / ↑', 'next / previous'],
+      ['esc', 'close search or panel'],
     ],
   },
   {
     tone: 'amber',
     head: 'triage',
     rows: [
-      ['coming soon', ''],
+      ['enter', 'open on GitHub'],
+      ['o', 'open on GitHub'],
+      ['e', 'mark as read'],
     ],
   },
   {
     tone: 'purple',
-    head: 'filter',
+    head: 'search',
     rows: [
-      ['coming soon', ''],
+      ['/ or ⌘ K', 'open search'],
+      ['repo:web', 'one repository'],
+      ['type:pr', 'pull requests only'],
+      ['reason:review', 'review requests'],
+      ['is:unread', 'unread only'],
     ],
   },
 ];
@@ -49,7 +57,7 @@ export function Shortcuts() {
           Keys, <span className="text-amber-600">mapped</span>.
         </h2>
         <p className="text-base text-slate-700 leading-[1.55] m-0 max-w-[560px] tracking-tight">
-          Open and search without touching the mouse. More triage and filter shortcuts are on the way.
+          Move through your inbox, open threads and clear them without touching the mouse. Search takes GitHub-style filters.
         </p>
 
         <motion.div
