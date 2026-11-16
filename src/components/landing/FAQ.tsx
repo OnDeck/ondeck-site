@@ -8,7 +8,11 @@ interface FAQItem {
 const qs: FAQItem[] = [
   {
     q: 'Does it send my notifications to a server?',
-    a: 'No. The extension talks to GitHub directly from your browser using your personal access token. The token never leaves your machine. There is no server.',
+    a: 'No. The extension talks to GitHub directly from your browser. Whether you sign in with GitHub or paste a personal access token, the token is stored encrypted on your machine and only ever sent to GitHub. There is no server.',
+  },
+  {
+    q: 'Why does Chrome say it can access github.com?',
+    a: "For Sign in with GitHub only. The extension calls github.com/login to get a one-time code and swap it for a token. It can't read any other page on github.com, and everything else goes through api.github.com.",
   },
   {
     q: 'Does it work with GitHub Enterprise?',

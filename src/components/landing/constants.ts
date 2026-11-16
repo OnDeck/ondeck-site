@@ -15,7 +15,7 @@ export type ToneColor = keyof typeof TONE_MAP;
 export const CHROME_WEB_STORE_URL =
   'https://chromewebstore.google.com/detail/ondeck';
 export const GITHUB_REPO_URL = 'https://github.com/OnDeck/ondeck-extension';
-// The extension authenticates with /user and reads notifications + repo data,
-// so it needs read:user in addition to notifications and repo.
+// Same scopes as the extension's own token link and its Sign in with GitHub
+// request. GET /user works without read:user.
 export const GITHUB_TOKEN_URL =
-  'https://github.com/settings/tokens/new?description=OnDeck&scopes=read:user,notifications,repo';
+  'https://github.com/settings/tokens/new?description=OnDeck&scopes=notifications,repo';
