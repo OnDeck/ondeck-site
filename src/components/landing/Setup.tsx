@@ -18,7 +18,7 @@ export function Setup() {
           Getting started
         </h2>
         <p className="text-base text-slate-700 leading-[1.55] tracking-tight mb-10 max-w-[560px]">
-          OnDeck takes about two minutes to set up. Install the extension, add a GitHub token, and configure your keyboard shortcut.
+          OnDeck takes about two minutes to set up. Install the extension, sign in with GitHub, and the keyboard shortcut works straight away.
         </p>
 
         <div className="space-y-6">
@@ -63,31 +63,12 @@ export function Setup() {
             </div>
             <div>
               <h3 className="text-lg font-semibold text-slate-900 m-0 mb-2 tracking-tight">
-                Generate a GitHub token
+                Sign in with GitHub
               </h3>
               <p className="text-[15px] text-slate-700 leading-[1.55] m-0 mb-3 tracking-tight">
-                Go to{' '}
-                <a
-                  href={GITHUB_TOKEN_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-700 underline underline-offset-2 hover:text-blue-800"
-                >
-                  GitHub&rsquo;s token page
-                </a>{' '}
-                and create a new token with{' '}
-                <code className="font-mono text-[13px] py-[2px] px-[6px] bg-stone-100 border border-stone-300 rounded text-slate-900">
-                  read:user
-                </code>
-                ,{' '}
-                <code className="font-mono text-[13px] py-[2px] px-[6px] bg-stone-100 border border-stone-300 rounded text-slate-900">
-                  notifications
-                </code>
-                , and{' '}
-                <code className="font-mono text-[13px] py-[2px] px-[6px] bg-stone-100 border border-stone-300 rounded text-slate-900">
-                  repo
-                </code>{' '}
-                scopes. Copy the token.
+                Click the OnDeck icon, then <strong className="font-semibold text-slate-900">Sign in with GitHub</strong>.
+                Copy the one-time code, approve OnDeck on github.com, and the popup signs you in. You can close the
+                popup while you approve; OnDeck finishes in the background and starts syncing straight away.
               </p>
             </div>
           </motion.div>
@@ -104,10 +85,27 @@ export function Setup() {
             </div>
             <div>
               <h3 className="text-lg font-semibold text-slate-900 m-0 mb-2 tracking-tight">
-                Add your token to OnDeck
+                Or use a personal access token
               </h3>
               <p className="text-[15px] text-slate-700 leading-[1.55] m-0 tracking-tight">
-                Click the OnDeck icon in your toolbar, paste your token when prompted, and save. OnDeck will start syncing your notifications immediately.
+                Rather not authorise an app? Create a classic token on{' '}
+                <a
+                  href={GITHUB_TOKEN_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-700 underline underline-offset-2 hover:text-blue-800"
+                >
+                  GitHub&rsquo;s token page
+                </a>{' '}
+                with the{' '}
+                <code className="font-mono text-[13px] py-[2px] px-[6px] bg-stone-100 border border-stone-300 rounded text-slate-900">
+                  notifications
+                </code>{' '}
+                and{' '}
+                <code className="font-mono text-[13px] py-[2px] px-[6px] bg-stone-100 border border-stone-300 rounded text-slate-900">
+                  repo
+                </code>{' '}
+                scopes, then paste it into the popup. Fine-grained tokens can&rsquo;t read notifications yet.
               </p>
             </div>
           </motion.div>
@@ -170,7 +168,7 @@ export function Setup() {
                 Your token stays local
               </h4>
               <p className="text-[13.5px] text-slate-700 leading-[1.5] m-0 tracking-tight">
-                OnDeck stores your GitHub token in this browser&rsquo;s extension storage. It&rsquo;s only ever sent to GitHub&rsquo;s API, never to a server of ours.
+                Whichever way you sign in, OnDeck encrypts the token and keeps it in this browser&rsquo;s extension storage. It&rsquo;s only ever sent to GitHub, never to a server of ours.
               </p>
             </div>
           </div>

@@ -99,7 +99,7 @@ export function Tour() {
                 tone="amber"
                 num="04"
                 title="Instant search"
-                body="Hit ⌘K to filter by title or repository as you type. No round-trip — it searches what's already loaded."
+                body="Hit / or ⌘K and type, or narrow with repo:, type:, reason: and is:. No round-trip — it searches what's already loaded."
               />
             </motion.div>
             <motion.div variants={itemVariants}>
@@ -114,8 +114,8 @@ export function Tour() {
               <Annotation
                 tone="blue"
                 num="06"
-                title="Runs on your token"
-                body="Talks to GitHub directly with your personal access token. Nothing routes through a server — your token stays in Chrome's storage on your machine."
+                title="Runs on your account"
+                body="Sign in with GitHub or paste a personal access token. Either way OnDeck talks to GitHub directly — nothing routes through a server, and the token stays encrypted in Chrome's storage on your machine."
               />
             </motion.div>
           </motion.div>
