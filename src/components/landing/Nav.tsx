@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
 import { GITHUB_REPO_URL } from './constants';
 
-export function Nav() {
+// linkBase is '/' on pages other than the landing page, so section links go home first.
+export function Nav({ linkBase = '' }: { linkBase?: string }) {
   return (
     <motion.nav
       className="h-14 flex items-center px-7 border-b border-stone-300 bg-stone-50 sticky top-0 z-50"
@@ -10,7 +11,7 @@ export function Nav() {
       transition={{ duration: 0.5, ease: 'easeOut' }}
     >
       <motion.a
-        href="#"
+        href={`${linkBase}#`}
         className="flex items-center gap-2 no-underline text-slate-900"
         whileHover={{ scale: 1.05 }}
         transition={{ duration: 0.2 }}
@@ -31,20 +32,20 @@ export function Nav() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        <a href="#tour" className="hidden sm:inline text-slate-700 no-underline tracking-tight hover:text-slate-900 transition-colors">
+        <a href={`${linkBase}#tour`} className="hidden sm:inline text-slate-700 no-underline tracking-tight hover:text-slate-900 transition-colors">
           Tour
         </a>
-        <a href="#shortcuts" className="hidden sm:inline text-slate-700 no-underline tracking-tight hover:text-slate-900 transition-colors">
+        <a href={`${linkBase}#shortcuts`} className="hidden sm:inline text-slate-700 no-underline tracking-tight hover:text-slate-900 transition-colors">
           Shortcuts
         </a>
-        <a href="#setup" className="hidden sm:inline text-slate-700 no-underline tracking-tight hover:text-slate-900 transition-colors">
+        <a href={`${linkBase}#setup`} className="hidden sm:inline text-slate-700 no-underline tracking-tight hover:text-slate-900 transition-colors">
           Setup
         </a>
         <a href={GITHUB_REPO_URL} className="hidden sm:inline text-slate-700 no-underline tracking-tight hover:text-slate-900 transition-colors">
           Source
         </a>
         <a
-          href="#install"
+          href={`${linkBase}#install`}
           className="py-[7px] px-3 bg-blue-600 text-white rounded-[5px] text-[13px] font-medium no-underline tracking-tight whitespace-nowrap hover:bg-opacity-90 transition-all"
         >
           Install
