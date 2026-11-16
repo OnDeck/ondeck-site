@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Privacy policy — OnDeck</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="What the OnDeck extension and website store, where your data goes, and how to delete it."
+    />
+
+    <link rel="icon" type="image/svg+xml" href="/icons/icon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/icon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-256.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --ondeck-sans: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+        --ondeck-mono: 'Geist Mono', 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; background: #fafaf9; color: #0f172a; }
+      body { font-family: var(--ondeck-sans); -webkit-font-smoothing: antialiased; }
+      html { scroll-behavior: smooth; }
+      a { color: inherit; }
+      ::selection { background: rgba(251, 191, 36, 0.30); }
+
+      @keyframes od-skel { 0%,100% { opacity: 0.55; } 50% { opacity: 0.95; } }
+      .od-skel { animation: od-skel 1.4s ease-in-out infinite; }
+      @keyframes caret { 50% { opacity: 0; } }
+
+      *::-webkit-scrollbar { width: 6px; height: 6px; }
+      *::-webkit-scrollbar-thumb { background: #d6d3d1; border-radius: 3px; }
+      *::-webkit-scrollbar-thumb:hover { background: #a8a29e; }
+      *::-webkit-scrollbar-track { background: transparent; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/privacyMain.tsx"></script>
+  </body>
+</html>
